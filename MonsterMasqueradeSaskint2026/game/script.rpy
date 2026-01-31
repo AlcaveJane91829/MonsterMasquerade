@@ -6,10 +6,17 @@ define a = Character("Ambrosia", color = "#ffffff", image = "ambrosia") # Female
 define b = Character("Basalt", color = "#ffffff", image = "basalt") # Female Gargoyle
 define r = Character("Razi", color = "#ffffff", image = "razi") # Non-Binary Creature thing
 define m = Character("Maximus", color = "#ffffff", image = "maximus") # Male werewolf
+define q = Character("???", color = "#ffffff") # Character labelled with question marks to mask their identity
 
 # Images used in the game and showing image sample (commented out)
 image cg example = "logo bw.png"
+# image note = "note.png" [Add this]
 image bg blank = "#000000"
+
+image ambrosia = "AmbrosiaPH.png"
+image basalt = "BasaltPH.png"
+image maximus = "MaximusPH.png"
+image razi = "RaziPH.png"
 
 # If all characters are at max points (all at some number), poly ending?
 # If all characters have negative point values, go_home?
@@ -80,10 +87,34 @@ default ending = ""
 # The game starts here.
 label start:
     ##### This is the label for the game's opening #####
+    scene bg black
+    "You are arriving home when you find a mysterious red envelope with an intricate seal stuck onto your door."
 
-    p "Blah blah blah introductory dialogue"
+    # scene note with dissolve(0.25) [Again, add the note png]
+    q """
+    You have been invited to the Bathory Estate for the 117th Annual Masquerade Ball.
 
-    a "Let me introduce you to the gang..." # Placeholder to show structure; replace this with something more in-character ----Damarcelle
+    Come dressed in your finest attire for a reception that is to die for. We will be starting as the clock strikes
+    midnight on overmorrow's eve.
+
+    I expect you to not be late {p} {cps=2} ---A {/cps}
+    """
+
+    """
+    Who could have given you this invite!?{p}And why invite you!?
+
+    It's not like you know someone who lives in this \"Bathory Estate\"
+
+    Nonetheless, you are intrigued. The curiosity drives you to take up this mysterious yet alluring proposition.
+    If anything, it would finally get you out of your drab and dreary home.
+
+    Not to mention the dazzling outfit you have been dying to wear, yet haven't gotten the chance to.
+    """
+
+    scene bg black
+    with Dissolve(1.0)
+    pause(1.0)
+
     jump introduction
 
 
@@ -179,21 +210,25 @@ label ambrosia_date:
 
 label basalt_ending:
     ##### PLACEHOLDER
+    show basalt at right
     "You got Basalt's ending! Play again to try to see more!"
     return
 
 label razi_ending:
     ##### PLACEHOLDER
+    show razi
     "You got Razi's ending! Play again to try to see more!"
     return
 
 label maximus_ending:
     ##### PLACEHOLDER
+    show maximus
     "You got Maximus' ending! Play again to try to see more!"
     return
 
 label ambrosia_ending:
     ##### PLACEHOLDER
+    show ambrosia
     "You got Ambrosia's ending! Play again to try to see more!"
     return
 

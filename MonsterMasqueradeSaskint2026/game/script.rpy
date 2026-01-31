@@ -248,6 +248,41 @@ label return_to_choice:
 
 label basalt_date:
     ##### PLACEHOLDER
+    "You walk over to a corner of the room and see a woman made of stone."
+
+    "You rack your brain to remember her name from when Ambrosia introduced her."
+
+    "Basalt...{p}Basalt...{p}Basalt..."
+
+    show basalt neutral
+    p "You're Basalt, right?"
+
+    b "Well, actually more of a granite..."
+    b "OH! My name! You meant my name! Yes, I'm Basalt, hi!"
+    b "Sorry, these associations..."
+    b "They flow out of me like a river out into the sea..."
+
+    menu:
+        "Well, the skull's just a needle in a haystack of meaning, no?":
+            $ character_points["Basalt"] += 5
+            show basalt happy
+            b "Er, well, yeah! And meaning's a very big haystack! Sometimes it makes me feel like an ant..."
+        "Nice simile":
+            show basalt happy
+            b "Thank you! I try..."
+        "Associations between what?":
+            show basalt sad
+            b "Well, I guess..."
+            b "...between my name and my body..."
+
+    show basalt happy
+    b "At any rate it's nice to finally meet you properly, erm..."
+
+    p "[protag_name]"
+
+    b "Right, right, [protag_name]!"
+        
+
     jump return_to_choice
 
 label razi_date:

@@ -1,16 +1,17 @@
 # GAMESCRIPT 2026 Saskint
 
 # Characters used in the game
-define p = Character("Protaigonist", color = "#ffffff") # Self-insert
-define v = Character("Ambrosia", color = "#ffffff") # Female vampire
-define g = Character("Basalt", color = "#ffffff") # Female Gargoyle
-define f = Character("Razi", color = "#ffffff") # Non-Binary Creature thing
-define w = Character("Maximus", color = "#ffffff") # Male werewolf
+define p = Character("Protaigonist", color = "#ffffff", image = "protag") # Self-insert
+define v = Character("Ambrosia", color = "#ffffff", image = "ambrosia") # Female vampire
+define g = Character("Basalt", color = "#ffffff", image = "basalt") # Female Gargoyle
+define f = Character("Razi", color = "#ffffff", image = "razi") # Non-Binary Creature thing
+define w = Character("Maximus", color = "#ffffff", image = "maximus") # Male werewolf
 
 # Images used in the game and showing image sample (commented out)
 image cg example = "logo bw.png"
 image bg blank = "#000000"
 # scene bg black
+show cg example
 
 # If all characters are at max points (all at some number), poly ending?
 # If all characters have negative point values, go_home?
@@ -42,6 +43,12 @@ label start:
     p "I am a protaigonist doing protaigonist-y things"
 
     p "(From boilerplate) Once you add a story, pictures, and music, you can release it to the world!"
+
+    p """
+    Triple quotes indicates monologue mode
+
+    This is for when a specific character (or narration with no character tag) speaks for an extended period of time.
+    
 
     # This ends the game.
 

@@ -6,10 +6,17 @@ define a = Character("Ambrosia", color = "#ffffff", image = "ambrosia") # Female
 define b = Character("Basalt", color = "#ffffff", image = "basalt") # Female Gargoyle
 define r = Character("Razi", color = "#ffffff", image = "razi") # Non-Binary Creature thing
 define m = Character("Maximus", color = "#ffffff", image = "maximus") # Male werewolf
+define q = Character("???", color = "#ffffff") # Character labelled with question marks to mask their identity
 
 # Images used in the game and showing image sample (commented out)
 image cg example = "logo bw.png"
+# image note = "note.png" [Add this]
 image bg blank = "#000000"
+
+image ambrosia = "AmbrosiaPH.png"
+image basalt = "BasaltPH.png"
+image maximus = "MaximusPH.png"
+image razi = "RaziPH.png"
 
 # If all characters are at max points (all at some number), poly ending?
 # If all characters have negative point values, go_home?
@@ -80,17 +87,93 @@ default ending = ""
 # The game starts here.
 label start:
     ##### This is the label for the game's opening #####
+    scene bg blank
+    "You are arriving home when you find a mysterious red envelope with an intricate seal stuck onto your door."
 
-    p "Blah blah blah introductory dialogue"
+    scene note 
+    with pixellate
 
-    a "Let me introduce you to the gang..." # Placeholder to show structure; replace this with something more in-character ----Damarcelle
+    q """
+    You have been invited to the Bathory Estate for the 117th Annual Masquerade Ball.
+
+    Come dressed in your finest attire for a reception that is to die for. We will be starting as the clock strikes
+    midnight on overmorrow's eve.
+
+    I expect you to not be late{p}{cps=2}---A{/cps}
+    """
+
+    """
+    Who could have given you this invite!?{p}And why invite you!?
+
+    It's not like you know someone who lives in this \"Bathory Estate\"
+
+    Nonetheless, you are intrigued. The curiosity drives you to take up this mysterious yet alluring proposition.
+    If anything, it would finally get you out of your drab and dreary home.
+
+    Not to mention the dazzling outfit you have been dying to wear, yet haven't gotten the chance to.
+    """
+
+    scene bg blank
+    with Dissolve(1.0)
+
+    pause(1.0)
+
     jump introduction
 
 
 label introduction:
     ##### This is where Ambrosia introduces us to all the other characters
-    p "Who do I want to see first..."
-    
+    scene bg castle
+    """
+    You arrive at the estate shortly before midnight. The wind howls through the barren trees as
+    pillars of moonlight cast upon the monolithic castle sitting atop the cliffs of the Bathory Estate.
+
+    Something about this place causes the hair on the back of your neck to stand on end. Yet another part of you
+    is allured to its irreverent beauty.
+    """
+
+    "You approach the towering entrance and knock."
+
+    scene bg blank
+    with Dissolve(0.5)
+
+    "You approach the towering entrance and knock."
+
+    # play audio "knock.mp3"
+    # play audio "doorOpen.mp3"
+
+    scene bg ballroom
+    with dissolve
+
+    show ambrosia
+
+    "Standing in front of you is a tall yet elegant woman."
+
+    a "Greetings. It seems you have finally decided to join us."
+
+    "She sniffs the air as she picks you apart with her obscured eyes."
+
+    a "Well, don't you just smell {cps=15}delectable{/cps}. {w}You shall fit in just fine."
+    a "Why don't you come and join us?"
+
+    menu:
+        "The woman reaches to grab your hand."
+
+        "Certainly, please lead the way!":
+            $ character_points["Ambrosia"] += 5
+            "You demurely take the woman's hand. It is cold to the touch."
+            a "Of course! The guests are going to adore you!"
+        
+        "Whoa, there! Slow down! Why am I even here!?":
+            $ character_points["Ambrosia"] -= 5
+            p "Whoa there, lady! Can I at least get some explanation!?"
+            p "Why was I invited to this creepy castle!? I don't know anyone here!"
+
+            a "{i}sigh{/i}! Your insolent whining bores me. Join the party before I change my mind about you."
+
+            "Well, isn't {i}she{/i} condescending..."
+    # end menu
+    scene bg blank
     # After that introduction, we decide which date we want to start off with
     menu:
         "Visit Basalt...":
@@ -117,6 +200,7 @@ label introduction:
 label return_to_choice:
     ##### This is the "Hub" The player will go back to after each date until they've seen them all
     # All the dates jump back to here at the end
+    scene bg blank
     if dates_seen == 4:
         $ seen_all = True
 
@@ -179,21 +263,25 @@ label ambrosia_date:
 
 label basalt_ending:
     ##### PLACEHOLDER
+    show basalt at right
     "You got Basalt's ending! Play again to try to see more!"
     return
 
 label razi_ending:
     ##### PLACEHOLDER
+    show razi
     "You got Razi's ending! Play again to try to see more!"
     return
 
 label maximus_ending:
     ##### PLACEHOLDER
+    show maximus
     "You got Maximus' ending! Play again to try to see more!"
     return
 
 label ambrosia_ending:
     ##### PLACEHOLDER
+    show ambrosia
     "You got Ambrosia's ending! Play again to try to see more!"
     return
 

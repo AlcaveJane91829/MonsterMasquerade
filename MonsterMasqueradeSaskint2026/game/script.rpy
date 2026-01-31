@@ -15,7 +15,7 @@ image bg blank = "#000000"
 # If all characters have negative point values, go_home?
 # Otherwise, ending is character ending with most amount of points
 # Ties are resolved based on the order of priority (given by how the order the dictionary is defined in below)
-$ character_points = {
+default character_points = {
     "Basalt":0,
     "Razi":0,
     "Maximus":0,
@@ -23,14 +23,14 @@ $ character_points = {
 }
 
 # Boolean (True/False) variables denoting which charcters' dates have been seen
-$ seen_basalt = False
-$ seen_razi = False
-$ seen_maximus = False
-$ seen_ambrosia = False
+default seen_basalt = False
+default seen_razi = False
+default seen_maximus = False
+default seen_ambrosia = False
 
 # Variables that count up the dates seen and goes to an ending if applicable
-$ dates_seen = 0
-$ seen_all = False
+default dates_seen = 0
+default seen_all = False
 
 
 # The game starts here.
@@ -51,25 +51,29 @@ label introduction:
     menu:
         "Visit Basalt...":
             $ seen_basalt = True
+            $ dates_seen += 1
             jump basalt_date
             
         "Visit Razi...":
             $ seen_razi = True
+            $ dates_seen += 1
             jump razi_date
 
         "Visit Maximus...":
             $ seen_maximus = True
+            $ dates_seen += 1
             jump maximus_date
             
         "Visit Ambrosia...":
             $ seen_ambrosia = True
+            $ dates_seen += 1
             jump ambrosia_date
     
 
 label return_to_choice:
     ##### This is the "Hub" The player will go back to after each date until they've seen them all
     # All the dates jump back to here at the end
-    $ if dates_seen == 4:
+    if dates_seen == 4:
         $ seen_all = True
 
     p "Who do I see now..."
@@ -101,6 +105,8 @@ label return_to_choice:
                 jump poly_ending
             elif (character_points["Basalt"] < 0) and (character_points["Razi"] < 0) and (character_points["Maximus"] < 0) and (character_points["Ambrosia"] < 0):
                 jump go_home
+            else:
+                jump ambrosia_ending
             # Set up conditionals for character endings
 
         
@@ -123,20 +129,26 @@ label ambrosia_date:
 
 label basalt_ending:
     ##### PLACEHOLDER
+    return
 
 label razi_ending:
     ##### PLACEHOLDER
+    return
 
 label maximus_ending:
     ##### PLACEHOLDER
+    return
 
 label ambrosia_ending:
     ##### PLACEHOLDER
+    return
 
 label poly_ending:
     ##### Placeholder? I don't know how serious of a suggestion this was ----Damarcelle
+    return
 
 label go_home:
     ##### YOU DIE!!!!!! (again, serious suggestion?) -----Damarcelle
+    return
 
 return

@@ -4,13 +4,15 @@
 define p = Character("Protaigonist", color = "#ffffff") # Self-insert
 define v = Character("Ambrosia", color = "#ffffff") # Female vampire
 define g = Character("Basalt", color = "#ffffff") # Female Gargoyle
-define f = Character("Frankenstein", color = "#ffffff") # Non-Binary
+define f = Character("Razi", color = "#ffffff") # Non-Binary Creature thing
 define w = Character("Maximus", color = "#ffffff") # Male werewolf
 
 
 # The game starts here.
 
 label start:
+
+    ##### THIS IS THE LABEL WE'LL USE FOR THE GAME OPENING #####
 
     # "Scene" Represents a background sprite (see tutorial)
 
@@ -29,3 +31,30 @@ label start:
     # This ends the game.
 
     return
+
+label vampire_date:
+    ##### PLACEHOLDER
+
+label gargoyle_date:
+    ##### PLACEHOLDER
+
+label frank_date:
+    ##### PLACEHOLDER
+
+label wolf_date:
+    ##### PLACEHOLDER
+
+label vampire_ending:
+    ##### PLACEHOLDER
+
+label gargoyle_ending:
+    ##### PLACEHOLDER
+
+label frank_ending:
+    ##### PLACEHOLDER
+
+label wolf_ending:
+    ##### PLACEHOLDER
+
+label poly_ending:
+    ##### Placeholder? I don't know how serious of a suggestion this was ----Damarcelle

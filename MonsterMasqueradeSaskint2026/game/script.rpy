@@ -87,7 +87,7 @@ default ending = ""
 # The game starts here.
 label start:
     ##### This is the label for the game's opening #####
-    scene bg black
+    scene bg blank
     "You are arriving home when you find a mysterious red envelope with an intricate seal stuck onto your door."
 
     # scene note with dissolve(0.25) [Again, add the note png]
@@ -111,7 +111,7 @@ label start:
     Not to mention the dazzling outfit you have been dying to wear, yet haven't gotten the chance to.
     """
 
-    scene bg black
+    scene bg blank
     with Dissolve(1.0)
     pause(1.0)
 

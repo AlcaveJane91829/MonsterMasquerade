@@ -8,6 +8,16 @@ define f = Character("Razi", color = "#ffffff") # Non-Binary Creature thing
 define w = Character("Maximus", color = "#ffffff") # Male werewolf
 
 
+# If all characters are at max points (all at some number), poly ending?
+# If all characters have negative point values, go_home?
+# Otherwise, ending is character ending with most amount of points
+$ character_points = {
+    "Ambrosia":0,
+    "Basalt":0,
+    "Razi":0,
+    "Maximus":0
+}
+
 # The game starts here.
 
 label start:

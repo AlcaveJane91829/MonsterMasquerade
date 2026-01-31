@@ -22,6 +22,47 @@ default character_points = {
     "Ambrosia":0
 }
 
+# This is a python function to check the conditions used to go to the acquired ending. Hopefull, you're using a code editor that can collapse this for you to save space
+
+# !!!!!! VERY IMPORTANT NOTE !!!!! 
+# This function assumes the max number of points for each character is 25 (i.e., the sum of them all is 100). If that number changes, I need to edit this function -----Damarcelle
+init python:
+    def ending_conditional_calc():
+        """
+        Purpose: Calculate which ending the player receives at the end of the game
+        Pre-conditions: The player has gone on all the dates and their final totals are tallied
+        Post-conditions: N/A
+        Return: String used to jump to the correct ending
+        """
+        global character_points
+
+        ch_point = []
+        sum_point = 0
+        all_neg = True
+
+        ch_point.append(character_points["Basalt"])
+        ch_point.append(character_points["Razi"])
+        ch_point.append(character_points["Maximus"])
+        ch_point.append(character_points["Ambrosia"])
+
+        for i in ch_point:
+            sum_point += i
+            if i >= 0:
+                all_neg = False
+
+        if sum_point == 100:
+            return "poly"
+        elif all_neg == True:
+            return "home"
+        elif max(ch_point) == ch_point[0]:
+            return "basalt"
+        elif max(ch_point) == ch_point[1]:
+            return "razi"
+        elif max(ch_point) == ch_point[2]:
+            return "max"
+        else:
+            return "ambrosia"
+
 # Boolean (True/False) variables denoting which charcters' dates have been seen
 default seen_basalt = False
 default seen_razi = False
@@ -31,6 +72,9 @@ default seen_ambrosia = False
 # Variables that count up the dates seen and goes to an ending if applicable
 default dates_seen = 0
 default seen_all = False
+
+# Dummy variable for the ending check, declared here to avoid bugs
+default ending = ""
 
 
 # The game starts here.
@@ -100,14 +144,20 @@ label return_to_choice:
             jump ambrosia_date
 
         "Wait, there ISN'T anyone else to see..." if seen_all == True:
-            # Go to poly ending if everyone has max points
-            if (character_points["Basalt"] == 25) and (character_points["Razi"] == 25) and (character_points["Maximus"] == 25) and (character_points["Ambrosia"] == 25):
+            $ ending = ending_conditional_calc()
+
+            if ending == "poly":
                 jump poly_ending
-            elif (character_points["Basalt"] < 0) and (character_points["Razi"] < 0) and (character_points["Maximus"] < 0) and (character_points["Ambrosia"] < 0):
+            elif ending == "home":
                 jump go_home
+            elif ending == "basalt":
+                jump basalt_ending
+            elif ending == "razi":
+                jump razi_ending
+            elif ending == "max":
+                jump maximus_ending
             else:
                 jump ambrosia_ending
-            # Set up conditionals for character endings
 
         
 
@@ -129,26 +179,32 @@ label ambrosia_date:
 
 label basalt_ending:
     ##### PLACEHOLDER
+    "You got Basalt's ending! Play again to try to see more!"
     return
 
 label razi_ending:
     ##### PLACEHOLDER
+    "You got Razi's ending! Play again to try to see more!"
     return
 
 label maximus_ending:
     ##### PLACEHOLDER
+    "You got Maximus' ending! Play again to try to see more!"
     return
 
 label ambrosia_ending:
     ##### PLACEHOLDER
+    "You got Ambrosia's ending! Play again to try to see more!"
     return
 
 label poly_ending:
     ##### Placeholder? I don't know how serious of a suggestion this was ----Damarcelle
+    "You got the poly ending! Play again to try to see more!"
     return
 
 label go_home:
     ##### YOU DIE!!!!!! (again, serious suggestion?) -----Damarcelle
+    "You got the bad ending! Play again to try to see more!"
     return
 
 return

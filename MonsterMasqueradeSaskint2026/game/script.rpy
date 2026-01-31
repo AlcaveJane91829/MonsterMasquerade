@@ -2,16 +2,14 @@
 
 # Characters used in the game
 define p = Character("Protaigonist", color = "#ffffff", image = "protag") # Self-insert
-define v = Character("Ambrosia", color = "#ffffff", image = "ambrosia") # Female vampire
-define g = Character("Basalt", color = "#ffffff", image = "basalt") # Female Gargoyle
-define f = Character("Razi", color = "#ffffff", image = "razi") # Non-Binary Creature thing
-define w = Character("Maximus", color = "#ffffff", image = "maximus") # Male werewolf
+define a = Character("Ambrosia", color = "#ffffff", image = "ambrosia") # Female vampire
+define b = Character("Basalt", color = "#ffffff", image = "basalt") # Female Gargoyle
+define r = Character("Razi", color = "#ffffff", image = "razi") # Non-Binary Creature thing
+define m = Character("Maximus", color = "#ffffff", image = "maximus") # Male werewolf
 
 # Images used in the game and showing image sample (commented out)
 image cg example = "logo bw.png"
 image bg blank = "#000000"
-# scene bg black
-show cg example
 
 # If all characters are at max points (all at some number), poly ending?
 # If all characters have negative point values, go_home?
@@ -24,58 +22,115 @@ $ character_points = {
     "Ambrosia":0
 }
 
+# Boolean (True/False) variables denoting which charcters' dates have been seen
+$ seen_basalt = False
+$ seen_razi = False
+$ seen_maximus = False
+$ seen_ambrosia = False
+
+# Variables that count up the dates seen and goes to an ending if applicable
+$ dates_seen = 0
+$ seen_all = False
+
+
 # The game starts here.
-
 label start:
+    ##### This is the label for the game's opening #####
 
-    ##### THIS IS THE LABEL WE'LL USE FOR THE GAME OPENING #####
+    p "Blah blah blah introductory dialogue"
 
-    # "Scene" Represents a background sprite (see tutorial)
+    a "Let me introduce you to the gang..." # Placeholder to show structure; replace this with something more in-character ----Damarcelle
+    jump introduction
 
-    scene bg room
 
-    # This shows a character sprite. 
+label introduction:
+    ##### This is where Ambrosia introduces us to all the other characters
+    p "Who do I want to see first..."
+    
+    # After that introduction, we decide which date we want to start off with
+    menu:
+        "Visit Basalt...":
+            $ seen_basalt = True
+            jump basalt_date
+            
+        "Visit Razi...":
+            $ seen_razi = True
+            jump razi_date
 
-    show eileen vhappy
-
-    # These display lines of dialogue.
-
-    p "I am a protaigonist doing protaigonist-y things"
-
-    p "(From boilerplate) Once you add a story, pictures, and music, you can release it to the world!"
-
-    p """
-    Triple quotes indicates monologue mode
-
-    This is for when a specific character (or narration with no character tag) speaks for an extended period of time.
+        "Visit Maximus...":
+            $ seen_maximus = True
+            jump maximus_date
+            
+        "Visit Ambrosia...":
+            $ seen_ambrosia = True
+            jump ambrosia_date
     
 
-    # This ends the game.
+label return_to_choice:
+    ##### This is the "Hub" The player will go back to after each date until they've seen them all
+    # All the dates jump back to here at the end
+    $ if dates_seen == 4:
+        $ seen_all = True
 
-    return
+    p "Who do I see now..."
 
-label vampire_date:
+    menu:
+        "Visit Basalt..." if seen_basalt == False:
+            $ seen_basalt = True
+            $ dates_seen += 1
+            jump basalt_date
+            
+        "Visit Razi..." if seen_razi == False:
+            $ seen_razi = True
+            $ dates_seen += 1
+            jump razi_date
+
+        "Visit Maximus..." if seen_maximus == False:
+            $ seen_maximus = True
+            $ dates_seen += 1
+            jump maximus_date
+            
+        "Visit Ambrosia..." if seen_ambrosia == False:
+            $ seen_ambrosia = True
+            $ dates_seen += 1
+            jump ambrosia_date
+
+        "Wait, there ISN'T anyone else to see..." if seen_all == True:
+            # Go to poly ending if everyone has max points
+            if (character_points["Basalt"] == 25) and (character_points["Razi"] == 25) and (character_points["Maximus"] == 25) and (character_points["Ambrosia"] == 25):
+                jump poly_ending
+            elif (character_points["Basalt"] < 0) and (character_points["Razi"] < 0) and (character_points["Maximus"] < 0) and (character_points["Ambrosia"] < 0):
+                jump go_home
+            # Set up conditionals for character endings
+
+        
+
+label basalt_date:
+    ##### PLACEHOLDER
+    jump return_to_choice
+
+label razi_date:
+    ##### PLACEHOLDER
+    jump return_to_choice
+
+label maximus_date:
+    ##### PLACEHOLDER
+    jump return_to_choice
+
+label ambrosia_date:
+    ##### PLACEHOLDER
+    jump return_to_choice
+
+label basalt_ending:
     ##### PLACEHOLDER
 
-label gargoyle_date:
+label razi_ending:
     ##### PLACEHOLDER
 
-label frank_date:
+label maximus_ending:
     ##### PLACEHOLDER
 
-label wolf_date:
-    ##### PLACEHOLDER
-
-label vampire_ending:
-    ##### PLACEHOLDER
-
-label gargoyle_ending:
-    ##### PLACEHOLDER
-
-label frank_ending:
-    ##### PLACEHOLDER
-
-label wolf_ending:
+label ambrosia_ending:
     ##### PLACEHOLDER
 
 label poly_ending:
@@ -83,3 +138,5 @@ label poly_ending:
 
 label go_home:
     ##### YOU DIE!!!!!! (again, serious suggestion?) -----Damarcelle
+
+return

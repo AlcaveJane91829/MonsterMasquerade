@@ -1,7 +1,10 @@
 # GAMESCRIPT 2026 Saskint
 
+# Variable to store the protaigonists name
+default protag_name = "Gray"
+
 # Characters used in the game
-define p = Character("Protaigonist", color = "#ffffff", image = "protag") # Self-insert
+define p = Character("[protag_name]", color = "#ffffff", image = "protag") # Self-insert
 define a = Character("Ambrosia", color = "#ffffff", image = "ambrosia") # Female vampire
 define b = Character("Basalt", color = "#ffffff", image = "basalt") # Female Gargoyle
 define r = Character("Razi", color = "#ffffff", image = "razi") # Non-Binary Creature thing
@@ -243,8 +246,6 @@ label return_to_choice:
             else:
                 jump ambrosia_ending
 
-        
-
 label basalt_date:
     ##### PLACEHOLDER
     jump return_to_choice
@@ -254,7 +255,174 @@ label razi_date:
     jump return_to_choice
 
 label maximus_date:
-    ##### PLACEHOLDER
+    scene bg ballroom
+    
+    show maximus neutral
+    "You head over to a tall, well-built man with ample fur under his chin and beside his jaw. He's standing, wistfully, staring into the distance."
+
+    show maximus happy
+    "However, he beams as you approach."
+
+    m "Why, hello there! My, you're looking rather swell this evening! May I inquire as to your name?"
+
+    menu:
+        "Oh, why, thank you! I'm [protag_name]!":
+            $ character_points["Maximus"] += 5
+            m "Exquisite! Let the rendez-vous commence, shall we?"
+        "It's [protag_name]":
+            m "Well, it's nice to meet you, [protag_name]!"
+        "Hey, bub! It's a masquerade! Don't be nosy!":
+            show maximus sad
+            $ character_points["Maximus"] -= 5
+            m "Oh, well, I suppose it is..."
+
+    show maximus neutral
+
+    p "So, what brings you to this place? You don't seem at all like the others I've met."
+
+    m "So I look human to you, eh? Well, I..."
+
+    p "...er, no, I didn't mean.."
+
+    show maximus happy
+    m "Oh, it's quite alright! I understand you're human; I can smell it. Being here would be quite the fish-out-of-water experience for you."
+    show maximus shocked
+    m "After all, I was one of you, once..."
+
+    p "Wait, you can smell . . . {p} oh. You're a werewolf, aren't you?"
+
+    show maximus neutral
+    pause(0.125)
+    show maximus happy
+    m "Correctement!"
+
+    p "Guess the tail shoul have clued me in..."
+
+    m "Careful --- one can never be too astute in a place like this!"
+
+    show maximus neutral
+    m """
+    As I said, I'm a werewolf, but I was born a human. I had a comfortable youth out in suburbia. White picket fence and all that. I never felt rich, but I was rich enough to never feel poor.
+
+    I guess, for the bulk of it, I had the "typical North American life" they like to show you in old sitcoms. I went to school, and I did well in school and my exctracurriculars. I got a degree. I got a job. I got a wife.
+
+    I loved my wife. Mathilda, her name was. We had two wonderful children together. I thought I'd get to give my children the quiet, comfortable life I had. I never thought of it as idyllic, but looking back, it seems quaint.
+
+    Wife, two kids, our fence was even a picket fence and it was actually painted white...
+    """
+
+    show maximus sad
+    m "..."
+    m "Well, that was a long time ago. After a few years I..."
+
+    menu:
+        "Oh, I get it! That's when you became a werewolf!":
+            m "Er, yes I . . . that's what I was getting to."
+        "Yeah, yeah! You became a werewolf and was you're big and scary and you're sad!":
+            $ character_points["Maximus"] -= 5
+            m "Yes, yes, I suppose you're quite astute..."
+        "Is . . . is that when you became a werewolf?":
+            $ character_points["Maximus"] += 5
+            m "{cps=2.0}. . .{/cps}"
+
+    show maximus neutral
+    m """
+    It happened to me in the night. Someone else, some other werewolf, I guess he was hungry. I suppose, if you really think you're a were{i}wolf{/i} and you go out at night, that's a normal way to luncheon.
+
+    I was there to visit my mother, my children's grandmother. The graveyard, that is. It was within walking distance of where we lived, the graveyard. And the fellow, the normal luncheon, I said...
+
+    ...well, he wanted to eat, and I guess to him I was as good as a ham sandwich. 
+    """
+    
+    mslow "It was a bloody thing, really.{nw}"
+    show maximus sad
+    extend "Through all the pain, my biggest fear was that my children would be forced to see me like that."
+
+    show maximus neutral
+    m """
+    At any rate, my body reconstituted after a while, and I became the way you see me now. I turn at night, of course; when it's a full moon, I mean.
+
+    But it's really not so bad. It turns out wolves are sleepy creatures, so I just take a warm glass of milk at night and hunker down in an oversized dog bed. 
+
+    The bigger issue was what society thought of me after that.
+
+    The tail . . . it was hard to explain to people that it was actually real, that it wasn't some strange fancy to wear a costume the whole day.
+    """
+
+    mslow "But Mathilda . . ."
+
+    m """
+    She wasn't cruel about it. She was strictly practical. She wanted the kids to be safe. So did I. We divorced and we agreed I'd leave.
+
+    I do visit. I vist often. But only during the day, of course.
+
+    For the most part I spend my time here --- Ambrosia found me, and agreed to keep me out of trouble by hiring me here. I help with the cleaning here.
+
+    You'd think it'd be a cushy job, and Ambrosia does keep the pay and hours good, but I still have lots of time to read.
+    """
+
+    mslow "Lots of time to think..."
+
+    menu:
+        "Are you going to make {i}me{/i} a ham sandwich!?":
+            m "Well, no, I'm not on the kitchen staff, I..."
+            
+            show maximus shocked
+            m "...oh, you're asking if I'm going to eat you."
+            m "No, I'm not going to eat you. It's not a full moon."
+
+            show max neutral
+            m "It's actually a new moon, in fact. Ambrosia's practical about these things. It's the safest time for everyone to come, and it's thematic in its own way, no?"
+
+        "Well, that's one heck of a story!":
+            $ character_points["Maximus"] -= 5
+            show maximus sad
+            m "Yeah, I..."
+            m "Sorry, I know it's a lot to hear. I like to talk. Sorry."
+
+        "Maximus...":
+            $ character_points["Maximus"] += 5
+            mslow ". . . "
+
+    show maximus happy
+    m "Well then, enough about me! How are you enjoying the ball?"
+
+    menu:
+        "I'm loving it! It's so amazing!":
+            m "Lovely! I'm glad to hear it!"
+
+        "Oh, {i}greeeeeeat{/i}, I {i}looooooooove{/i} being around monsters!":
+            $ character_points["Maximus"] -= 5
+            show maximus shocked
+            m "Well, that's..."
+            m "...that's nice..."
+
+        "Truth be told, I'm a little overwhelmed. It's iteresting to meet you people, though!":
+            $ character_points["Maximus"] += 5
+            show maximus happy
+            m "Well, I'm glad you find me interesting!"
+            m "I know Ambrosia dragged you here without much context, but it was nice to meet you!"
+    
+    hide maximus
+    
+    a "OH, MAAAAAAAAXIMUUUUUUUUUUUS!!!!!!"
+
+    show maximus happy at right
+    m "Well, I guess I'm off! I hope to see you soon!"
+
+    scene bg blank
+    p "So that was Maximus, huh?"
+    p "Quite a character. That story of his was quite sad."
+    p "Of course, I've got to be carfeful about what people say about themselves..."
+
+    menu:
+        "Gotta get this sentimentality out of my head. They're monsters...":
+            $ character_points["Maximus"] -= 5
+        "Iteresting guy. Interestig talk.":
+            pass
+        "And yet, stil... Maximus... I hope he's okay...":
+            $ character_points["Maximus"] += 5
+
     jump return_to_choice
 
 label ambrosia_date:

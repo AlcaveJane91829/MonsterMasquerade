@@ -58,3 +58,6 @@ label wolf_ending:
 
 label poly_ending:
     ##### Placeholder? I don't know how serious of a suggestion this was ----Damarcelle
+
+label go_home:
+    ##### YOU DIE!!!!!!

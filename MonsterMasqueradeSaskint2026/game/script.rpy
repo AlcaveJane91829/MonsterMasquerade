@@ -999,7 +999,8 @@ label ambrosia_date:
 
     menu:
     #option 1 +points
-        p "How did you acquire such a magnificent castle?":
+        "How did you acquire such a magnificent castle?":
+            $ character_points["Abrosia"] += 5
             show ambrosia happy
             a "Ah, finally someone asks me about something I actually want to talk about."
             a "The Bathory Estate has been in the family since the 16th century when my dear mother Elizibeth acquired it when she became the Countess."
@@ -1007,36 +1008,43 @@ label ambrosia_date:
             a "Since then I have used the estate as a sanctuary for the ones who must hide in the shadows."
 
         #option 2 no points
-        p "Why did you have me invited here?"
-        show ambrosia happy
-        a "Well you're the hor d'oeuvre of course, us monsters have to eat."
-        a "Unless of course one of us likes you enough to keep you around for the dance."
-        p "..."
+        "Why did you have me invited here?":
+            show ambrosia happy
+            a "Well you're the hor d'oeuvre of course, us monsters have to eat."
+            a "Unless of course one of us likes you enough to keep you around for the dance."
+            p "..."
 
         #option 3 -points
-        p "Why are you so full of yourself?"
-        show ambrosia shocked
-        a "The real question is why do you think you even have the right to compare yourself to me."
-        a "To me you are an ant. And I suggest you correct your behavior before I bring out a magnifying glass."
+        "Why are you so full of yourself?":
+            $ character_points["Abrosia"] -= 5
+            show ambrosia shocked
+            a "The real question is why do you think you even have the right to compare yourself to me."
+            a "To me you are an ant. And I suggest you correct your behavior before I bring out a magnifying glass."
 
     #question 4
+    show ambrosia happy
     a "Now let me ask you this. How meaningful to you is your free will?"
 
-    #option 1 +points
-    p "Honestly if someone could tell me what to do all the time, that would be great."
-    a "I believe that could be arranged."
+    menu:
+        #option 1 +points
+        "Honestly if someone could tell me what to do all the time, that would be great.":
+            $ character_points["Abrosia"] += 5
+            a "I believe that could be arranged."
 
-    #option 2 no points
-    p "I enjoy being free, but sometimes being told what to do makes things easier."
-    a "Hmm, interesting."
+        #option 2 no points
+        "I enjoy being free, but sometimes being told what to do makes things easier.":
+            a "Hmm, interesting."
 
-    #option 3 -points
-    p "I consider my free will to be what I am. Without it, I cease to exist."
-    show ambrosia sad
-    a "What a shame."
+        #option 3 -points
+        "I consider my free will to be what I am. Without it, I cease to exist.":
+            $ character_points["Abrosia"] -= 5
+            show ambrosia sad
+            a "What a shame."
 
     #end part
     a "Well that is all the time I have for you human. I must entertain my guests."
+    hide ambrosia
+    with moveoutleft
     #ambrosia slides off screen
     jump return_to_choice
 

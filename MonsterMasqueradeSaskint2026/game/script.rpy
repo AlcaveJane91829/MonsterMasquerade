@@ -964,13 +964,14 @@ label basalt_ending:
 
     p "Yes, well..."
 
-    b "OH! By the way, you own this castle!"
+    b "OH! By the way, Ambrosia was planning to eat you."
 
     p "Wait... WHAT!?"
 
-    b "YEAH! Ambrosia wanted me to mention it! She's been managing the estate, but it's in your name."
-    b "That's why she invited you out-of-the-blue --- she knew it wasn't strictly hers, so she tracked down the actual owner."
-    b "I guess it came back to you. I don't know how, you'll have to ask her. Old politics, I think."
+    b "YEAH! But, don't worry about it, I convinced her to let you live."
+    b "That's why she invited you out-of-the-blue --- she wanted a fun main course."
+    b "B-But don't worry, I wouldn't have eaten you! I don't really need to, being stone and all."
+    b "If you want you can stay here with me... we can write poetry together."
 
     p "Really? I can..."
     p "...stay here?"
@@ -984,7 +985,7 @@ label basalt_ending:
 
     What would you even have to {i}do{/i} here!?
 
-    What does \"managing the estate\" even {i}mean{/i}!?
+    What does \"Ambrosia wanted a fun main course\" even {i}mean{/i}!?
     """
 
     b "Hey..."

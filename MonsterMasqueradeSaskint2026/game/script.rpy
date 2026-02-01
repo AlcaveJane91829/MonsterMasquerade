@@ -624,6 +624,7 @@ label basalt_date:
     jump return_to_choice
 
 label razi_date:
+    scene bg ballroom
     "You walk over to the doctor with the strange mask. They are shoveling pieces of charcuterie into their pockets."
     r "Well well well, another plebeian approaches. I hope this one will be different"
     p "Greetings, I am-"

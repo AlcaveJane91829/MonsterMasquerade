@@ -1246,10 +1246,37 @@ label poly_ending:
 
 label go_home:
     ##### YOU DIE!!!!!! (again, serious suggestion?) -----Damarcelle
+    "As the conversations come to a close, the ambiance of the room begins to shift."
+    "The Countess taps her glass with a spoon, letting a sound ring out across the ballroom."
+    show ambrosia neutral
+    a "What a splendid evening we have had so far. Dancing will occur shortly, but I am sure you have all been dying to know what the main course is."
+    a "And, what better for one of my parties than fresh blood and meat."
+    "Catching onto what's about to happen you turn to leave and run right into the broad frame of Maximus."
+    show ambrosia happy 
+    show maximus shocked
+    m "Sorry, but this was inevitable, the Countess gets what she wants."
+    "His large hands grab you, trapping your arms to your sides. It’s easy for him to pick you up."
+    "Kicking your feet, you’re carried to Ambrosia, who grins down at you."
+    a "I’m sure you’ll be divine. Basalt, Razi, come here!"
+    show Basalt shocked
+    show Razi happy
+    a "As Hostess and Guests of Honor, we get the first bites."
+
     scene cg bad
-    "Wow, what a jerk! You were mean to EVERYBODY! They ate you!"
-    "You got the bad ending! Play again to try to see more!"
-    jump credits
+
+    "Fear."
+    "Thats what you feel first."
+    "Then sharp pain as teeth bite into your flesh."
+    "Your cries fall on deaf ears, and the world fades to black."
+
+
+
+    scene bg blank
+    """
+    Unfortunately  for you, your time at the Monster Masquerade ended in a bloody heap.
+    Maybe next time, should you have another chance, you’ll be able to convince someone to save you.
+    You got the Death ending! Play again to try and see more!
+    """
 
 label credits:
     scene bg blank

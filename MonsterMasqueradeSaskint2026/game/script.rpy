@@ -734,7 +734,7 @@ label razi_date:
     menu:
     #option 1 +points
         "As long as you use something to dull the pain.":
-            $ character_points["Razi"] += 5
+            $ character_points["Razi"] += 15
             show razi happy
             r "HAH! I could survive painful jokes like that if it meant feeding my curiosities."
             r "Could I turn a human into a monster through just one body part, or would it take as long as it did for me to turn. Questions to be asked by brilliant minds such as mine and yours."
@@ -748,7 +748,7 @@ label razi_date:
 
         #option 3 -points
         "No! I don't want to be cut apart.":
-            $ character_points["Razi"] -= 5
+            $ character_points["Razi"] -= 15
             show razi shocked
             r "How boorish. I was having a good conversation, not many stay to listen to my long winded ramblings, so it is quite disappointing to see that you would rather die than indulge me."
             r "Still, when you are dead I can take whatever is left of you and see if I can make a monster human again."
@@ -766,6 +766,8 @@ label razi_date:
     "Razi gives you a curt nod."
     show razi happy
     r "I shall see you at the end of the night, alive or dead."
+    hide razi
+    with moveoutright
     "With a grand turn, coat flowing out behind them, they head off into the crowd of monsters on the ballroom floor."
 
     jump return_to_choice
@@ -942,7 +944,100 @@ label maximus_date:
     jump return_to_choice
 
 label ambrosia_date:
-    ##### PLACEHOLDER
+    "You approach the Countess. She is walking around smoking a cigarette."
+    show ambrosia neutral
+    with moveinright
+    a "Ah, it seems you have come crawling back to me, how sweet."
+
+    menu:
+        #option 1 +points
+        "How could I resist someone so captivating?":
+            $ character_points["Ambrosia"] += 5
+            show ambrosia happy
+            a "Ah, you're a charmer aren't you."
+
+        #option 2 no points
+        "Yeah I guess I am.":
+            a "You are going to have to start being more interesting if you wish to entertain me."
+
+        #option 3 -points
+        "You know I'm a person, you don't need to treat me like some sort of pet.":
+            $ character_points["Ambrosia"] -= 5
+            show ambrosia sad
+            a "I don't see much of a difference. The only thing that sets you apart from a lap dog is your incessant belief that you are meant to be great."
+
+            p "What is that supposed to mean?"
+            show ambrosia shocked
+            a "Quiet dog!"
+            p "..."
+
+    show ambrosia neutral
+    p "You were the one who sent me the invitation, weren't you?"
+    a "Oh absolutely not. That's what my servants are for."
+    a "But now you do have me curious, do you have any idea what is actually going on here?."
+
+    menu:
+        "To me it seems like a gathering of monsters celebrating their protection from humanity":
+            $ character_points["Abrosia"] += 5
+            show ambrosia happy
+            a "Ah, it seems like someone {i}can{/i} pay attention, what a good little pet."
+
+        "What is this, some kind of \"Monster Masquerade\"?":
+            a "Say that again?"
+            p ""Monster Masquerade"?"
+            show ambrosia sad
+            a "Ah I was right, just as dimwitted as the first time I heard it."
+
+        "A cult meeting of ungodly creatures performing blasphemous magicks?":
+            $ character_points["Abrosia"] -= 5
+            show ambrosia shocked
+            a "Oh wow you {i}do{/i} have no idea what's happening here. Not even in a cute way."
+
+
+    show ambrosia happy
+    a "Alright it's your turn now, ask me something about myself."
+
+    menu:
+    #option 1 +points
+        p "How did you acquire such a magnificent castle?":
+            show ambrosia happy
+            a "Ah, finally someone asks me about something I actually want to talk about."
+            a "The Bathory Estate has been in the family since the 16th century when my dear mother Elizibeth acquired it when she became the Countess."
+            a "I inherited it from her when she found her unfortunate demise on the end of a stake."
+            a "Since then I have used the estate as a sanctuary for the ones who must hide in the shadows."
+
+        #option 2 no points
+        p "Why did you have me invited here?"
+        show ambrosia happy
+        a "Well you're the hor d'oeuvre of course, us monsters have to eat."
+        a "Unless of course one of us likes you enough to keep you around for the dance."
+        p "..."
+
+        #option 3 -points
+        p "Why are you so full of yourself?"
+        show ambrosia shocked
+        a "The real question is why do you think you even have the right to compare yourself to me."
+        a "To me you are an ant. And I suggest you correct your behavior before I bring out a magnifying glass."
+
+    #question 4
+    a "Now let me ask you this. How meaningful to you is your free will?"
+
+    #option 1 +points
+    p "Honestly if someone could tell me what to do all the time, that would be great."
+    a "I believe that could be arranged."
+
+    #option 2 no points
+    p "I enjoy being free, but sometimes being told what to do makes things easier."
+    a "Hmm, interesting."
+
+    #option 3 -points
+    p "I consider my free will to be what I am. Without it, I cease to exist."
+    show ambrosia sad
+    a "What a shame."
+
+    #end part
+    a "Well that is all the time I have for you human. I must entertain my guests."
+    #ambrosia slides off screen
     jump return_to_choice
 
 label basalt_ending:

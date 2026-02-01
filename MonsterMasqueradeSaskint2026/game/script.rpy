@@ -292,6 +292,7 @@ label introduction:
         xalign 0.33
         yalign 1.0
     with moveinright
+    
     b """
     Greetings, men, maidens, and monsters! I welcome you all to the dazzling spires for which I
     was spawned. Brought forth through the carved likeness of life and liveliness for which it was meant to

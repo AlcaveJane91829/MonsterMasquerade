@@ -532,6 +532,7 @@ label basalt_date:
     b "Here:"
 
     hide basalt
+    nvl clear
     nvl show dissolve
     nvb """
     Across the field, Prometheus gives fire,
@@ -605,8 +606,7 @@ label basalt_date:
     jump return_to_choice
 
 label razi_date:
-    ##### PLACEHOLDER
-    "You walk over to the doctor with the strange mask. They are shoveling pieces of charcuterie into their pockets."
+"You walk over to the doctor with the strange mask. They are shoveling pieces of charcuterie into their pockets."
 r "Well well well, another plebeian approaches. I hope this one will be different"
 p "Greetings, I am-"
 r "I do not care for names. I care about what is in here,"
@@ -629,7 +629,7 @@ show razi neutral
 r "But in the long run I would prefer conversation to not be solely about food. I am a scientist, not a cheese monger after all."
 
 #option 2
-p"I’m a human."
+p"I'm a human."
 r "That much is obvious just looking at you. No self respecting member of monster society would come to one of Ambrosia's grand masquerades with their jaw as slack as yours was."
 r "Well, maybe a zombie would, but our lovely hostess hates the stink that comes off of them."
 
@@ -922,6 +922,95 @@ label maximus_date:
 
 label ambrosia_date:
     ##### PLACEHOLDER
+    #question 1
+"You approach the Countess. She is walking around smoking a cigarette."
+a "Ah, it seems you have come crawling back to me, how sweet."
+
+#option 1 +points
+p "How could I resist someone so captivating?"
+show ambrosia happy
+a "Ah, you're a charmer aren't you."
+
+#option 2 no points
+p "Yeah I guess I am."
+a "You are going to have to start being more interesting if you wish to entertain me."
+
+#option 3 -points
+p "You know I'm a person, you don't need to treat me like some sort of pet."
+show ambrosia sad
+a "I don't see much of a difference. The only thing that sets you apart from a lap dog is your incessant belief that you are meant to be great."
+
+p "What is that supposed to mean?"
+show ambrosia shocked
+a "Quiet dog!"
+p "..."
+
+#question 2
+p "You were the one who sent me the invitation weren't you."
+a "Oh absolutely not. That's what my servants are for."
+a "But now you do have me curious, do you have any idea what is actually going on here?."
+
+#option 1 +points
+p "To me it seems like a gathering of monsters celebrating their protection from humanity"
+show ambrosia smile
+a "Ah, it seems like someone {i}can{/i} pay attention, what a good little pet."
+
+#option 2 no points
+p "What is this some kind of "Monster Masquerade "?"
+a "Say that again?"
+p ""Monster Masquerade"?"
+show ambrosia sad
+a "Ah I was right, just as dimwitted as the first time I heard it."
+
+#option 3 -points
+p "A cult meeting of ungodly creatures performing blasphemous magiks?"
+show ambrosia shocked
+a "Oh wow you {i}do{/i} have no idea what's happening here. Not even in a cute way."
+
+
+#question 3
+a "Alright it's your turn now, ask me something about myself."
+
+#option 1 +points
+p "How did you acquire such a magnificent castle?"
+show ambrosia happy
+a "Ah, finally someone asks me about something I actually want to talk about."
+a "The Bathory Estate has been in the family since the 16th century when my dear mother Elizibeth acquired it when she became the Countess."
+a "I inherited it from her when she found her unfortunate demise on the end of a stake."
+a "Since then I have used the estate as a sanctuary for the ones who must hide in the shadows."
+
+#option 2 no points
+p "Why did you have me invited here?"
+show ambrosia happy
+a "Well you're the hor d'oeuvre of course, us monsters have to eat."
+a "Unless of course one of us likes you enough to keep you around for the dance."
+p "..."
+
+#option 3 -points
+p "Why are you so full of yourself?"
+show ambrosia shocked
+a "The real question is why do you think you even have the right to compare yourself to me."
+a "To me you are an ant. And I suggest you correct your behavior before I bring out a magnifying glass."
+
+#question 4
+a "Now let me ask you this. How meaningful to you is your free will?"
+
+#option 1 +points
+p "Honestly if someone could tell me what to do all the time, that would be great."
+a "I believe that could be arranged."
+
+#option 2 no points
+p "I enjoy being free, but sometimes being told what to do makes things easier."
+a "Hmm, interesting."
+
+#option 3 -points
+p "I consider my free will to be what I am. Without it, I cease to exist."
+show ambrosia sad
+a "What a shame."
+
+#end part
+a "Well that is all the time I have for you human. I must entertain my guests."
+#ambrosia slides off screen
     jump return_to_choice
 
 label basalt_ending:

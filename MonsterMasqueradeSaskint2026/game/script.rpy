@@ -12,11 +12,17 @@ define r = Character("Razi", color = "#ffffff", image = "razi") # Non-Binary Cre
 define m = Character("Maximus", color = "#ffffff", image = "maximus") # Male werewolf
 define q = Character("???", color = "#ffffff") # Character labelled with question marks to mask their identity
 
-# Images used in the game and showing image sample (commented out)
-image cg example = "logo bw.png"
-# image note = "note.png" [Add this]
+# Backgrounds and CGs
+image bg note = "note.png"
 image bg blank = "#000000"
+image bg ballroon = "Ballroom_Front_Final.png"
 
+image cg ambrosia = 
+image cg basalt = 
+image cg maximus =
+image cg razi = 
+
+# Character portraits
 image ambrosia = "AmbrosiaPH.png"
 image basalt = "BasaltPH.png"
 image maximus = "MaximusPH.png"
@@ -94,7 +100,7 @@ label start:
     scene bg blank
     "You are arriving home when you find a mysterious red envelope with an intricate seal stuck onto your door."
 
-    scene note 
+    scene bg note 
     with pixellate
 
     q """
@@ -248,6 +254,7 @@ label return_to_choice:
                 jump ambrosia_ending
 
 label basalt_date:
+    scene bg ballroom
     "You walk over to a corner of the room and see a woman made of stone."
 
     "You rack your brain to remember her name from when Ambrosia introduced her."
@@ -658,37 +665,184 @@ label ambrosia_date:
     jump return_to_choice
 
 label basalt_ending:
-    ##### PLACEHOLDER
-    show basalt at right
+    scene bg ballroom
+
+    "Well, you suppose, it's about time to head out."
+    "It was certainly interesting to meet these people, but the {i}vibes{/i}, they're still freaking you out."
+    "Besides, you don't want to stay out in the new moon too late, do you?"
+
+    show basalt
+
+    "As you go to leave, you see Basalt in the corner. She has a notepad and pen, clearly jotting down some poetic line or other."
+
+    "You decide to give her a goodbye."
+
+    p "Hey, er, Basalt..."
+
+    show basalt happy
+    b "Oh, hey [protag_name]! It was nice to meet you tonight!"
+
+    show basalt neutral
+
+    p "Yes, well..."
+
+    b "OH! By the way, you own this castle!"
+
+    p "Wait... WHAT!?"
+
+    b "YEAH! Ambrosia wanted me to mention it! She's been managing the estate, but it's in your name."
+    b "That's why she invited you out-of-the-blue --- she knew it wasn't strictly hers, so she tracked down the actual owner."
+    b "I guess it came back to you. I don't know how, you'll have to ask her. Old politics, I think."
+
+    p "Really? I can..."
+    p "...stay here?"
+
+    hide basalt
+
+    """
+    {i}STUPID, STUPID, STUPID!{/i} you think.
+
+    You have a life! Things to do at home!
+
+    What would you even have to {i}do{/i} here!?
+
+    What does \"managing the estate\" even {i}mean{/i}!?
+    """
+
+    b "Hey..."
+
+    scene cg basalt
+
+    b "You know, it'll be nice..."
+    b "...if you stayed, and I got to see you more often here..."
+
+    """
+    You look into her marble eyes and think...
+
+    ...you can stay here.
+
+    With her.
+
+    You can see her every day and hear and read her poetry every day.
+
+    You feel the expanse of meaning in her gaze, the haystack metaphor from earlier.
+
+    If the skull really is a needle in a haystack of meaning...
+
+    ...this place, the Bathory estate....
+
+    ...it looks like a good place to get lost in, with her.
+
+    With Basalt.
+    """
+
+    scene bg blank
     "You got Basalt's ending! Play again to try to see more!"
-    return
+    jump credits
 
 label razi_ending:
     ##### PLACEHOLDER
     show razi
     "You got Razi's ending! Play again to try to see more!"
-    return
+    jump credits
 
 label maximus_ending:
-    ##### PLACEHOLDER
-    show maximus
+    scene bg ballroom
+
+    "Well, you suppose, it's about time to head out."
+    "It was certainly interesting to meet these people, but the {i}vibes{/i}, they're still freaking you out."
+    "Besides, you don't want to stay out in the new moon too late, do you?"
+
+    "As you go to do so, a hand with strange, paw-like fingers gently touches your shoulder."
+    "You realize before even turning around --- it's Maximus."
+
+    show maximus shocked
+    m "Hey, erm, I..."
+
+    "He seems..."
+    "...upset? Sad? Hesitant? The expression is hard to place."
+
+    m "I wanted to ask if you wanted stay here. At the castle."
+
+    p "Maximus, I'm flattered, but I . . . I have a life back home. I can't just abandon that."
+
+    show ambrosia at left
+    with move
+    a "About that..."
+    a "The truth is, [protag_name], I invited you to the Bathory estate because {i}you{/i} were set to inherit it."
+    a "The ball was so busy that I didn't have a chance to explain. I've been managing it, but properly it belongs to you."
+    hide maximus
+    a "I'll explain more about hows and wherefores about the circumstances if you do decide to stay."
+    a "For now..."
+    a "...I'll leave you two alone."
+    hide ambrosia
+
+    show maximus shocked
+    p "Is this true? I technically..."
+    p "...own, I own this place...?"
+
+    show maximus sad
+    m "Yes, you do. But, that's not what I wanted to ask..."
+
+    p "What? What is it?"
+
+    m "I want you to stay with me..."
+    m "...{i}WITH{/i} me, [protag_name]!"
+    m "I want to know what life with another is like..."
+    m "...after Mathilda..."
+
+    hide maximus
+
+    """
+    You stand there dumbfounded at the sudden proposal.
+
+    Initially, you're hesitant. You only just met the guy, after all.
+
+    But then...
+    """
+
+    scene cg maximus
+
+    """
+    He opens his arms into a big, wide hug, and you realize...
+
+    You are completely safe with this man.
+
+    In his big, loveable arms, you're safe.
+
+    You actually...
+
+    ...actually {i}want{/i} to take him up on his offer!
+
+    Even in his condition, with his big, loveable smile...
+
+    ...how bad could it be?
+    """
+
+    scene bg blank
     "You got Maximus' ending! Play again to try to see more!"
-    return
+    jump credits
 
 label ambrosia_ending:
     ##### PLACEHOLDER
     show ambrosia
     "You got Ambrosia's ending! Play again to try to see more!"
-    return
+    jump credits
 
 label poly_ending:
     ##### Placeholder? I don't know how serious of a suggestion this was ----Damarcelle
     "You got the poly ending! Play again to try to see more!"
-    return
+    jump credits
 
 label go_home:
     ##### YOU DIE!!!!!! (again, serious suggestion?) -----Damarcelle
+    scene bg blank
+    "Wow, what a jerk! You were mean to EVERYBODY! They ate you!"
     "You got the bad ending! Play again to try to see more!"
+    jump credits
+
+label credits:
+    scene bg blank
     return
 
 return

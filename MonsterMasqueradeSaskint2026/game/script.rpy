@@ -282,7 +282,7 @@ label introduction:
     with moveouttop
 
     a """
-    Very good Doctor. I’m sure your request will be honoured.
+    Very good Doctor. I'm sure your request will be honoured.
 
     Finally, we have my latest little pet project, Basalt von Slate. She was born from this very castle
     as part of the architecture. 
@@ -606,6 +606,8 @@ label basalt_date:
 
 label razi_date:
     ##### PLACEHOLDER
+    scene bg ballroom
+    show razi neutral
     "You walk over to the doctor with the strange mask. They are shoveling pieces of charcuterie into their pockets."
 r "Well well well, another plebeian approaches. I hope this one will be different"
 p "Greetings, I am-"
@@ -629,7 +631,7 @@ show razi neutral
 r "But in the long run I would prefer conversation to not be solely about food. I am a scientist, not a cheese monger after all."
 
 #option 2
-p"I’m a human."
+p"I'm a human."
 r "That much is obvious just looking at you. No self respecting member of monster society would come to one of Ambrosia's grand masquerades with their jaw as slack as yours was."
 r "Well, maybe a zombie would, but our lovely hostess hates the stink that comes off of them."
 
@@ -640,7 +642,7 @@ show razi shocked
 r "Have you ever heard of fashion, you insolent swine?!"
 show razi neutral 
 r "Uhg."
-"Razi clears their throat and readjusts their coat. Though you can’t see their face, you can feel the dirty look shot your way."
+"Razi clears their throat and readjusts their coat. Though you can't see their face, you can feel the dirty look shot your way."
 
 #end question 1
 
@@ -682,8 +684,8 @@ r "Consciousness is an entirely other conversation that I can have with you anot
 #option 3 -points
 p "Are you a masochist or something?"
 show razi sad
-r "Well, yes, but I don’t see how that would pertain to the conversation."
-p "It’s just that only a masochist would do something like that to themselves."
+r "Well, yes, but I don't see how that would pertain to the conversation."
+p "It's just that only a masochist would do something like that to themselves."
 r "That is quite the assumption of scientists like me. Many medical knowhows have come to be through the process of self experimentation."
 r "My journey through this change of body was not pushed by some desire for pain like many think, but by an appetite for knowledge."
 
@@ -692,19 +694,19 @@ r "My journey through this change of body was not pushed by some desire for pain
 show razi neutral 
 r "Though much of myself has been changed over the years, I have been searching for a new subject to experiment on."
 r "I have only recently started to look into exchanging body parts with that of animals, and with such questioning comes the bigger thought of if I can turn a human into a monster through similar means."
-"That was a very pointed question now wasn’t it."
-p " Yeah, I’m sure you’ll be able to find a person for that."
-r "Indeed I shall. I’m sure I will find one very, very soon."
-"Oh, you’re definitely in danger."
+"That was a very pointed question now wasn't it."
+p " Yeah, I'm sure you'll be able to find a person for that."
+r "Indeed I shall. I'm sure I will find one very, very soon."
+"Oh, you're definitely in danger."
 r "Tell me, do you have any medical conditions?"
-p "I’m not too sure."
+p "I'm not too sure."
 r "Hmm. Do you know your blood type?"
 p "No?"
 r "Shame. Dear friend of mine, you whateveryournameis. I could care less, perhaps if we continue to talk after this party has come to an end I may learn it."
-r "I’m sure Ambrosia had a reason to invite a human such as yourself, and I presume you are to be a delicious treat for us, which through our conversation I believe you would be quite palatable."
+r "I'm sure Ambrosia had a reason to invite a human such as yourself, and I presume you are to be a delicious treat for us, which through our conversation I believe you would be quite palatable."
 p "Wait, eat me? What do you m-"
 "Razi leans forwards and grabs a piece of cheese, shoving it in your mouth to shut you up."
-r "You’re in a castle full of monsters. A vampire is hosting a party in her home. If you are as smart as you think of yourself, I am sure you would have put it together by now."
+r "You're in a castle full of monsters. A vampire is hosting a party in her home. If you are as smart as you think of yourself, I am sure you would have put it together by now."
 r "Though, I do believe that if I asked and played nice with Ambrosia, I could worm my way into her good graces and figure out a way to keep you alive. But, you must agree to something for me first."
 "You swallow the cheese that was not so gracefully used to shut you up."
 p "What would that be?" 
@@ -727,7 +729,7 @@ r "Hmm, not much enthusiasm, but I do appreciate the acceptance of your fate sho
 r "Perhaps I will cut you open and replace your heart first so I can give you a love for science that I carry in mine."
 
 #option 3 -points
-p "No! I don’t want to be cut apart."
+p "No! I don't want to be cut apart."
 show razi shocked
 r "How boorish. I was having a good conversation, not many stay to listen to my long winded ramblings, so it is quite disappointing to see that you would rather die than indulge me."
 r "Still, when you are dead I can take whatever is left of you and see if I can make a monster human again."
@@ -739,7 +741,7 @@ r "Good luck living."
 show razi neutral
 "Razi moves back and fixes their collar."
 r "Well, I do suppose that I should converse with our gracious host promptly. Pleasantries must be shown for being a guest of honour."
-r "I had such a fun conversation with you, and I do hope you live. Good conversation is hard when you’re surrounded by dimwits with not a single thought behind their eyes."
+r "I had such a fun conversation with you, and I do hope you live. Good conversation is hard when you're surrounded by dimwits with not a single thought behind their eyes."
 p "Yeah, I had a good conversation as well. Even if we had a bad conversation, at least the cheese tasted good."
 r "Hmm, yes, I suppose it did."
 "Razi gives you a curt nod."
@@ -922,7 +924,99 @@ label maximus_date:
 
 label ambrosia_date:
     ##### PLACEHOLDER
+    # Ambrosia date
+#question 1
+"You approach the Countess. She is walking around smoking a cigarette."
+a "Ah, it seems you have come crawling back to me, how sweet."
+
+#option 1 +points
+p "How could I resist someone so captivating?"
+show ambrosia happy
+a "Ah, you're a charmer aren't you."
+
+#option 2 no points
+p "Yeah I guess I am."
+a "You are going to have to start being more interesting if you wish to entertain me."
+
+#option 3 -points
+p "You know I'm a person, you don't need to treat me like some sort of pet."
+show ambrosia sad
+a "I don't see much of a difference. The only thing that sets you apart from a lap dog is your incessant belief that you are meant to be great."
+
+p "What is that supposed to mean?"
+show ambrosia shocked
+a "Quiet dog!"
+p "..."
+
+#question 2
+p "You were the one who sent me the invitation weren't you."
+a "Oh absolutely not. That's what my servants are for."
+a "But now you do have me curious, do you have any idea what is actually going on here?."
+
+#option 1 +points
+p "To me it seems like a gathering of monsters celebrating their protection from humanity"
+show ambrosia smile
+a "Ah, it seems like someone {i}can{/i} pay attention, what a good little pet."
+
+#option 2 no points
+p "What is this some kind of "Monster Masquerade "?"
+a "Say that again?"
+p ""Monster Masquerade"?"
+show ambrosia sad
+a "Ah I was right, just as dimwitted as the first time I heard it."
+
+#option 3 -points
+p "A cult meeting of ungodly creatures performing blasphemous magiks?"
+show ambrosia shocked
+a "Oh wow you {i}do{/i} have no idea what's happening here. Not even in a cute way."
+
+
+#question 3
+a "Alright it's your turn now, ask me something about myself."
+
+#option 1 +points
+p "How did you acquire such a magnificent castle?"
+show ambrosia happy
+a "Ah, finally someone asks me about something I actually want to talk about."
+a "The Bathory Estate has been in the family since the 16th century when my dear mother Elizibeth acquired it when she became the Countess."
+a "I inherited it from her when she found her unfortunate demise on the end of a stake."
+a "Since then I have used the estate as a sanctuary for the ones who must hide in the shadows."
+
+#option 2 no points
+p "Why did you have me invited here?"
+show ambrosia happy
+a "Well you're the hor d'oeuvre of course, us monsters have to eat."
+a "Unless of course one of us likes you enough to keep you around for the dance."
+p "..."
+
+#option 3 -points
+p "Why are you so full of yourself?"
+show ambrosia shocked
+a "The real question is why do you think you even have the right to compare yourself to me."
+a "To me you are an ant. And I suggest you correct your behavior before I bring out a magnifying glass."
+
+#question 4
+a "Now let me ask you this. How meaningful to you is your free will?"
+
+#option 1 +points
+p "Honestly if someone could tell me what to do all the time, that would be great."
+a "I believe that could be arranged."
+
+#option 2 no points
+p "I enjoy being free, but sometimes being told what to do makes things easier."
+a "Hmm, interesting."
+
+#option 3 -points
+p "I consider my free will to be what I am. Without it, I cease to exist."
+show ambrosia sad
+a "What a shame."
+
+#end part
+a "Well that is all the time I have for you human. I must entertain my guests."
+#ambrosia slides off screen
+
     jump return_to_choice
+
 
 label basalt_ending:
     scene bg ballroom
@@ -1001,7 +1095,53 @@ label basalt_ending:
     jump credits
 
 label razi_ending:
-    ##### PLACEHOLDER
+    
+    #Razi Ending
+
+"Well, you suppose, it's about time to head out."
+"It was certainly interesting to meet these people, but the vibes, they're still freaking you out."
+"Besides, you don't want to stay out in the new moon too late, do you?"
+
+show razi happy
+
+"Just as you're grabbing the last snack from the dessert table, you notice Razi making a beeline towards you."
+r "My fine fellow, it seems as though I have convinced our lovely hostess to not eat you!"
+r "It's a good night for a bit of life saving isn't it."
+p "Yes. Thank you so much Razi, I was not keen on being eaten. I will take my leave now then."
+"Just as you turn to leave this cursed place, Razi places a surprisingly warm hand on your shoulder, a small jolt of electricity snapping like static."
+show razi normal
+r "Come now, we made an agreement if I remember correctly, and naturally I do. I save your life, you stay with me. Compatriots in science!"
+p "Right. Slipped my mind."
+"It hadn't, but you were hoping it had slipped from theirs. Still, following through with your deal wouldn't be too bad. Razi was an interesting character, so you would never be bored."
+"Their hand leaves your shoulder and they lean up against the dessert table, tiling their head."
+r "I'm sure it did, hmm? My mind however, is a steel trap wired shut, nothing escapes it."
+p "Having it wired shut would mean nothing get in it though."
+"Razi shakes a finger at you, chuckling."
+r "An astute observation, however as a scientist of my caliber I was able to find a way to get information into said steel trap."
+r "Now, as my new partner in science, I believe that we should finish up this party."
+p "Yeah, definitely. It's starting to get a bit stuffy in here."
+"Razi stands up from their leaning position and takes your hand. Shifting their mask, they lean down and place a kiss on the back of your hand, a jolt of electricity shooting up your arm and warming your heart."
+r "Might I have this last dance?"
+p "O-Oh! Of course."
+"Razi moves their mask back over their face and stands up, linking their arm with you."
+r "To the dance floor then, and what better way to dance then with the start of an experimentation!"
+
+scene cg razi
+
+"Pulling out a needle and thread, Razi starts to spin with you in a waltz."
+r "First experiment, how high is your pain threshold. Hold onto me as tight as you want, dearest."
+r "Perhaps we will have the same appreciation for pain. Great minds do think alike."
+"""
+Pain shoots through your arm as the two of you spin around, the needle and threat pulling through your skin. 
+The initials RF written into your skin in black twine.
+The manic laughter from Razi is worrisome, but here in the ballroom, spinning with the strange doctor,
+"""
+"""
+You could stay with them, every day a new experience.
+What's a little bit of pain a day for the promise of immortality with them by your side.
+"""
+
+
     show razi
     "You got Razi's ending! Play again to try to see more!"
     jump credits
@@ -1084,7 +1224,33 @@ label maximus_ending:
     jump credits
 
 label ambrosia_ending:
-    ##### PLACEHOLDER
+    #Ambrosia Ending
+"Well, you suppose, it's about time to head out."
+"It was certainly interesting to meet these people, but the vibes, they're still freaking you out."
+"Besides, you don't want to stay out in the new moon too late, do you?"
+show ambrosia
+"After her speech, Ambrosia heads straight towards you."
+show ambrosia happy
+a "Well if it isn’t my favorite little human. Where do you think you are going? Don’t tell me you thought you could just get away."
+p "Oh, I thought I should probably get going."
+a "No no, not at all. Why not stay with me. Forever. I could protect you, keep you safe."
+a "Of course your other option is to do what I originally wanted to. But that would be such a waste of a loyal servant."
+p "What did you originally want?"
+show ambrosia smile
+a "Eat you, of course."
+show ambrosia neutral
+p "..."
+a "But I don’t want that anymore, but the choice is yours of course."
+p "Well I guess I shall stay with you then, my lady."
+show ambrosia smile
+a "Perfect."
+a "Join me for a dance?"
+scene cg ambrosia
+"The Countess sweeps you onto the dance floor leading your every move.
+In her cold hand you feel stable and safe. You feel the worries of everyday life slough off of you as she sinks her teeth into your neck.
+There is no need to resist for she will keep you safe and she will give you everything you desire. 
+But the only thing that you desire now is her."
+
     show ambrosia
     "You got Ambrosia's ending! Play again to try to see more!"
     jump credits
@@ -1095,10 +1261,39 @@ label poly_ending:
     jump credits
 
 label go_home:
-    ##### YOU DIE!!!!!! (again, serious suggestion?) -----Damarcelle
+    #eaten ending
+"As the conversations come to a close, the ambiance of the room begins to shift."
+"The Countess taps her glass with a spoon, letting a sound ring out across the ballroom."
+show ambrosia neutral
+a "What a splendid evening we have had so far. Dancing will occur shortly, but I am sure you have all been dying to know what the main course is."
+a "And, what better for one of my parties than fresh blood and meat."
+"Catching onto what's about to happen you turn to leave and run right into the broad frame of Maximus."
+show ambrosia happy 
+show maximus shocked
+m "Sorry, but this was inevitable, the Countess gets what she wants."
+"His large hands grab you, trapping your arms to your sides. It’s easy for him to pick you up."
+"Kicking your feet, you’re carried to Ambrosia, who grins down at you."
+a "I’m sure you’ll be divine. Basalt, Razi, come here!"
+show Basalt shocked
+show Razi happy
+a "As Hostess and Guests of Honor, we get the first bites."
+
+#show death ending card
+
+"Fear."
+"Thats what you feel first."
+"Then sharp pain as teeth bite into your flesh."
+"Your cries fall on deaf ears, and the world fades to black."
+
+
+
     scene bg blank
-    "Wow, what a jerk! You were mean to EVERYBODY! They ate you!"
-    "You got the bad ending! Play again to try to see more!"
+ """
+ Unfortunately  for you, your time at the Monster Masquerade ended in a bloody heap.
+Maybe next time, should you have another chance, you’ll be able to convince someone to save you.
+You got the Death ending! Play again to try and see more!
+"""
+
     jump credits
 
 label credits:

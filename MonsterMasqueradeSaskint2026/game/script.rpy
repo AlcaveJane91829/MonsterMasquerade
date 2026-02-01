@@ -7,6 +7,7 @@ default protag_name = "Gray"
 define p = Character("[protag_name]", color = "#ffffff", image = "protag") # Self-insert
 define a = Character("Ambrosia", color = "#ffffff", image = "ambrosia") # Female vampire
 define b = Character("Basalt", color = "#ffffff", image = "basalt") # Female Gargoyle
+define nvb = Character("", color = "#ffffff", kind = nvl) # Novel-mode for Basalt's poetry
 define r = Character("Razi", color = "#ffffff", image = "razi") # Non-Binary Creature thing
 define m = Character("Maximus", color = "#ffffff", image = "maximus") # Male werewolf
 define q = Character("???", color = "#ffffff") # Character labelled with question marks to mask their identity
@@ -247,7 +248,6 @@ label return_to_choice:
                 jump ambrosia_ending
 
 label basalt_date:
-    ##### PLACEHOLDER
     "You walk over to a corner of the room and see a woman made of stone."
 
     "You rack your brain to remember her name from when Ambrosia introduced her."
@@ -271,6 +271,7 @@ label basalt_date:
             show basalt happy
             b "Thank you! I try..."
         "Associations between what?":
+            $ character_points["Basalt"] -= 5
             show basalt sad
             b "Well, I guess..."
             b "...between my name and my body..."
@@ -278,10 +279,202 @@ label basalt_date:
     show basalt happy
     b "At any rate it's nice to finally meet you properly, erm..."
 
-    p "[protag_name]"
+    p "[protag_name]."
 
     b "Right, right, [protag_name]!"
-        
+
+    p "You, I'm surprised to see you this sociable, Basalt. You seemed pretty austere when Ambrosia was introducing you."
+    
+    show basalt neutral
+    b "Well, I'm sort of a prize of the castle. I have to make a good impression on the guests, you know?"
+    show basalt happy
+    b "Speaking of --- what did you think of my poem!?"
+
+    menu:
+        "It was lovely! I really enjoyed it!":
+            b "Thank you! You know, a lot of people don't seem to appreciate my poetry."
+            show basalt sad
+            b "Apparently, it can be a bit much..."
+            p "Oh, hush, now! It was beutiful!"
+            show basalt happy
+            pause(1.0)
+        "You know, you can't appreciate a poem on first read. Can I get it in writing?":
+            $ character_points["Basalt"] += 5
+            show basalt shocked
+            b "REALLY!?"
+
+            p "Mais, bien sûr! What's the point of poetry if you don't engage!?"
+            p "I'd be honoured to have a copy of your poem."
+
+            bslow "W-wow, I..."
+            b "...here. I'll give you the copy I used for the presentation."
+            b "It's a little out of sorts, but the pages are numbered."
+
+            p "Wow, that's so kind! Thank you so much!"
+            p "I'm going to be honest..."
+            p "...I didn't get all of it when you wrote it out."
+
+            b "Well, that's understandable! It's a lot, I know, but it's nice to be taken seriously!"
+            b "Sometimes, people don't..."
+        "It was... Well, poetry's just...":
+            show basalt sad
+            b "Oh, I see. I guess poetry's not for everyone..."
+    # end menu
+
+    show basalt neutral
+    b "Well, you know, maybe starting with long poetry was a bit of a long shot. Maybe we should start with something simpler."
+
+    p "A haiku?"
+    
+    b "Oh, come on! That's a little basic! How about..."
+    b "...a senryū?"
+
+    p "Senryū?"
+
+    b "It's like a Haiku, it's a type of originally Japanese poetry with a 5-7-5 syllable pattern."
+    b "Except, in a senryū the topic is a humerous depiction of human folly and not nature."
+
+    p "Wow. I thought the 5-7-5 thing is all a haiku was. I didn't know there were other kinds of poetry like it!"
+    show basalt happy
+    b "Well, {i}syllable{/i}, Japanese is actually a mora-timed language, well, you see, you should know vowel lenght is phonemic..."
+
+    p "Okay, but this poem is in English, yes!"
+
+    b "Yes, of course, sorry! Sometimes, I miss those shades of meaning you could say, haha!"
+
+    p "Er..."
+
+    show basalt sad
+    b "Oh, right, you don't know I'm colourblind. Stone eyes have their disadvantages."
+    b "Sorry. Sometimes I have a bad theory-of-other-minds. I forget others don't know everything."
+
+    p "That's okay! Anyway, the poem..."
+    
+    show basalt happy
+    b "Right, right, the poem here:"
+
+    hide basalt
+    nvl show dissolve
+    nvb """
+    I walk to the store
+
+    To buy milk for Pekoe tea
+
+    Drunk by my stuff'd cows
+    """
+    nvl hide dissolve
+
+    show basalt happy
+    b "So!? So!? Wha'djya think!?"
+
+    menu:
+        "What's the punchline...?":
+            $ character_points["Basalt"] -= 5
+            show basalt sad
+            b "Oh, the punchline is that I'm buying milk for tea, but the tea is for stuffies, and the stuffies are cows,"
+            b "and cows..."
+            b "Sorry, I thought it was obvious..."
+        "It was great! Love it!":
+            b "Well, that's great! I'm glad you liked it!"
+        "It was good, but the punchline could be smoother and the foible foib'ler":
+            $ character_points["Basalt"] += 5
+            b "You know, you're right!"
+            b "I guess it's not really a \"foible\" to play with stuffies, is it?"
+            b "And subtlety is..."
+            b "...a subtle art I haven't mastered."
+            b "Thank you!"
+
+            p "For what?"
+
+            b "Thank you for giving real feedback."
+            b "Lots of people just call my poetry \"good\" without elaborating. It feels fake..."
+    # end menu
+
+    show basalt neutral
+    b "Anyway, mind if I show you one last poem?"
+
+    p "Sure, what kind is this one?"
+
+    b "It's a sonnet, actually."
+
+    p "A sonnet?"
+
+    show basalt happy
+    b "Yeah, like Shakespeare!"
+    show basalt neutral
+    b "Except the love this one's dedicated to isn't a person. It's nature."
+    b "Here:"
+
+    hide basalt
+    nvl show dissolve
+    nvb """
+    Across the field, Prometheus gives fire,
+
+    The fire of life to all the fields of grass,
+
+    That takes their stasis'd states to active spire.
+
+    Oh, lo! The wind! With Zephyr's unseen mass,
+
+    Gives light to see the darken'd life of plants!
+
+    And as I see that life, the life so hid,
+
+    It grants the life within myself! It grants!
+
+    I see that life, and all my fears are rid,
+
+    All rid of fear my life is null and void!
+
+    Oh, how, the wind it gives me strength to move!
+
+    My too-pure disposition now alloy'd
+
+    The strength to go unto the world and prove!
+
+    My love, my laughter, all are made fulfilled
+
+    As seen by wind, who made my stasis kill'd!
+    """
+    nvl hide dissolve
+
+    show basalt sad
+    b "I know it's not the greatest but..."
+
+    menu:
+        "Oh, nonsense it was great!":
+            show basalt happy
+            b "Oh, well, thank you..."
+        "I could never keep that rhyme scheme up for a whole sonnet. Good work.":
+            show basalt happy
+            $ character_points["Ambrosia"] += 5
+            b "Thanks! Yeah, it took me a while to right, but I think it's okay..."
+            p "More than okay, it's great! Thank you for sharing!"
+            b "Thank you..."
+        "Well, it seemed a little old-hat":
+            $ character_points["Ambrosia"] -= 5
+            b "Yeah, well, I guess it's a sonnet..."
+
+    b "Anyway, thank you so much for listening my poems! Again, I know I can be a lot..."
+
+    p "Nonsense! That was great! Thank you!"
+
+    b "No, thank {i}you{/i}! I'm going to see who else is here, but I'd like to see you again!"
+
+    p "See you later, alligator!"
+
+    b "See ya!"
+
+    scene bg blank
+    p "So that's basalt, huh. She's..."
+
+    menu:
+        "A great person. I hope she's right. I hope I'll see her again...":
+            $ character_points["Basalt"] += 5
+        "A bit much...":
+            pass
+        "A little hard to take seriously...":
+            $ character_points["Basalt"] -= 5
 
     jump return_to_choice
 

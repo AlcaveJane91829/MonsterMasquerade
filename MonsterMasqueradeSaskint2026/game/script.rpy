@@ -1047,21 +1047,22 @@ label maximus_ending:
 
     show ambrosia at left
     with move
-    a "About that..."
-    a "The truth is, [protag_name], I invited you to the Bathory estate because {i}you{/i} were set to inherit it."
-    a "The ball was so busy that I didn't have a chance to explain. I've been managing it, but properly it belongs to you."
+    a "About that,"
+    a "The truth is, [protag_name], Maximus convinced me that we should not eat you."
+    a "I was saving you for the main course, but he gave me a good reason to let you live."
     hide maximus
-    a "I'll explain more about hows and wherefores about the circumstances if you do decide to stay."
-    a "For now..."
-    a "...I'll leave you two alone."
+    a "So, you have two choices, take his offer and stay here. Forever. Or die."
+    a "For now, I'll leave you two alone."
+    a "Toodles!"
     hide ambrosia
 
     show maximus shocked
-    p "Is this true? I technically..."
-    p "...own, I own this place...?"
+    p "Is this true?"
+    p "You were going to eat me?!"
 
     show maximus sad
-    m "Yes, you do. But, that's not what I wanted to ask..."
+    m "Yes, Ambrosia was planning to. But, I wouldn't have! I'm not a big fan of the whole, eating people thing."
+    m "I do have another question for you..."
 
     p "What? What is it?"
 

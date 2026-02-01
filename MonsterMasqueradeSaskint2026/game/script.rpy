@@ -155,7 +155,7 @@ label introduction:
     scene bg ballroom
     with dissolve
 
-    show ambrosia
+    show ambrosia neutral
 
     "Standing in front of you is a tall yet elegant woman."
 
@@ -178,11 +178,127 @@ label introduction:
             $ character_points["Ambrosia"] -= 5
             p "Whoa there, lady! Can I at least get some explanation!?"
             p "Why was I invited to this creepy castle!? I don't know anyone here!"
+            show ambrosia shocked
 
             a "{i}sigh{/i}! Your insolent whining bores me. Join the party before I change my mind about you."
 
             "Well, isn't {i}she{/i} condescending..."
-    # end menu
+    
+    hide ambrosia
+
+    "The woman takes you into a large ball room filled with creatures of a all shapes and sizes."
+    "Their inhuman forms hid behind intricate masks."
+
+    "In this sea of ungodly vessels, four of these figures catch your eye in particular."
+
+    show maximus neutral:
+        xalign 0.0
+        yalign 1.0
+    with move
+    show razi neutral:
+        xalign 0.33
+        yalign 1.0
+    with move
+    show basalt neutral:
+        xalign 0.66
+        yalign 1.0
+    with move
+    show ambrosia neutral:
+        xalign 1.0
+        yalign 1.0
+    with move
+
+    """
+    A rugged man in a sheep mask,
+
+    a sophisticated person in a strange chimeric mask,
+
+    a woman with skin made of stone with devilish wings,
+
+    and the hostess, a regal woman wearing a mask that resembles a mosquito.
+    """
+
+    hide maximus
+    with moveoutleft
+
+    hide razi
+    with moveoutleft
+
+    hide basalt
+    with moveoutleft
+
+    show ambrosia happy:
+        xalign 0.5
+        yalign 1.0
+    with move
+
+    a "Welcome everyone to the 117th Annual Masquerade Ball!"
+    a "I am your enchanting hostess, Countess Ambrosia Bathory!"
+    a "I hope you are all having a wonderful evening."
+
+    show ambrosia neutral
+
+    a """
+    The Bathory family is always happy to make the acquaintance of and provide refuge to all the inhuman dregs
+    pushed into the shadows by humanity.
+
+    I am pleased to announce that the van Helsing family has finally been driven out of the area,
+    so we shall not be seeing their ungentlemaly faces any time soon.
+    """
+
+    "The crowd gives an applause."
+
+    a "I would also like to introduces our special guests for the night."
+    show ambrosia happy:
+        xalign 0.33
+        yalign 1.0
+    with move
+
+    show maximus neutral:
+        xalign 0.66
+        yalign 1.0
+    with moveinright
+
+    a "This is Maximus Lupercus III, the Alpha of the Waning Crescent Pack. A very loyal ally to the Bathory family!"
+
+    m "Pleased to make your acquaintance!"
+    hide maximus with moveoutleft
+
+    show razi:
+        xalign 0.33
+        yalign 1.0
+    with moveinright
+
+    a "Next is my good friend, Doctor Razi Frankenstein. One of the greatest minds... \"alive\""
+
+    r """ 
+    Thank you Madan Bathory. I do want to make a statement to the crowd.
+    Do not bother coming up to me if you don't have anything interesting to say. I do not care for your hollow pleasantries.
+
+    I do not need my time wasted---
+    """
+
+    hide razi
+    with moveouttop
+
+    a """
+    Finally, we have my latest little pet project, Basalt von Slate. She was born from this very castle
+    as part of the architecture. 
+    
+    Now she wanders the halls, spouting her . . . adequate . . . poetry.
+    """
+
+    show basalt:
+        xalign 0.33
+        yalign 1.0
+    with moveinright
+    b """
+    Greetings, men, maidens, and monsters! I welcome you all to the dazzling spires for which I
+    was spawned. Brought forth through the carved likeness of life and liveliness for which it was meant to
+    represent. The very brick that lay above you also makes up my flesh...
+    """
+
+    "She continues with her poem for what feels like minutes"
     scene bg blank
     # After that introduction, we decide which date we want to start off with
     menu:
@@ -310,7 +426,7 @@ label basalt_date:
             show basalt shocked
             b "REALLY!?"
 
-            p "Mais, bien sûr! What's the point of poetry if you don't engage!?"
+            p "Mais, bien sur! What's the point of poetry if you don't engage!?"
             p "I'd be honoured to have a copy of your poem."
 
             bslow "W-wow, I..."
@@ -334,12 +450,12 @@ label basalt_date:
     p "A haiku?"
     
     b "Oh, come on! That's a little basic! How about..."
-    b "...a senryū?"
+    b "...a senryu?"
 
-    p "Senryū?"
+    p "Senryu?"
 
     b "It's like a Haiku, it's a type of originally Japanese poetry with a 5-7-5 syllable pattern."
-    b "Except, in a senryū the topic is a humerous depiction of human folly and not nature."
+    b "Except, in a senryu the topic is a humerous depiction of human folly and not nature."
 
     p "Wow. I thought the 5-7-5 thing is all a haiku was. I didn't know there were other kinds of poetry like it!"
     show basalt happy

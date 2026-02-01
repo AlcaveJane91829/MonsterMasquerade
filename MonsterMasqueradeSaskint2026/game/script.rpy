@@ -624,147 +624,146 @@ label basalt_date:
     jump return_to_choice
 
 label razi_date:
-    ##### PLACEHOLDER
     "You walk over to the doctor with the strange mask. They are shoveling pieces of charcuterie into their pockets."
-r "Well well well, another plebeian approaches. I hope this one will be different"
-p "Greetings, I am-"
-r "I do not care for names. I care about what is in here,"
-"They poke their finger into your forehead."
-r "and here."
-"They poke you in the sternum. You feel a small electric shock as the poke you."
-p "Okay?"
-r "That's all? You must have nothing in your head just like the rest of these nitwit bone biters who surround us."
-r "I find it quite insulting that you would sully the air around me with such dimwitter banter."
-p "I am fully capable of good banter."
-#question 1
-r "So, then banter! Tell me something interesting."
+    r "Well well well, another plebeian approaches. I hope this one will be different"
+    p "Greetings, I am-"
+    r "I do not care for names. I care about what is in here,"
+    "They poke their finger into your forehead."
+    r "and here."
+    "They poke you in the sternum. You feel a small electric shock as the poke you."
+    p "Okay?"
+    r "That's all? You must have nothing in your head just like the rest of these nitwit bone biters who surround us."
+    r "I find it quite insulting that you would sully the air around me with such dimwitter banter."
+    p "I am fully capable of good banter."
+    #question 1
+    r "So, then banter! Tell me something interesting."
 
-#option 1 +points
-p "Did you know that there are 2000 varieties of cheeses available worldwide."
-r "2000?"
-show razi happy
-r "I do not often keep up with the food world, but considering we are at the refreshment table, I suppose such conversation is inevitable."
-show razi neutral 
-r "But in the long run I would prefer conversation to not be solely about food. I am a scientist, not a cheese monger after all."
+    #option 1 +points
+    p "Did you know that there are 2000 varieties of cheeses available worldwide."
+    r "2000?"
+    show razi happy
+    r "I do not often keep up with the food world, but considering we are at the refreshment table, I suppose such conversation is inevitable."
+    show razi neutral 
+    r "But in the long run I would prefer conversation to not be solely about food. I am a scientist, not a cheese monger after all."
 
-#option 2
-p"I’m a human."
-r "That much is obvious just looking at you. No self respecting member of monster society would come to one of Ambrosia's grand masquerades with their jaw as slack as yours was."
-r "Well, maybe a zombie would, but our lovely hostess hates the stink that comes off of them."
+    #option 2
+    p"I'm a human."
+    r "That much is obvious just looking at you. No self respecting member of monster society would come to one of Ambrosia's grand masquerades with their jaw as slack as yours was."
+    r "Well, maybe a zombie would, but our lovely hostess hates the stink that comes off of them."
 
-#option 3 -points
-p "Your coat isn't on."
-"There's a moment of silence as your attempted jokes completely flops."
-show razi shocked
-r "Have you ever heard of fashion, you insolent swine?!"
-show razi neutral 
-r "Uhg."
-"Razi clears their throat and readjusts their coat. Though you can’t see their face, you can feel the dirty look shot your way."
+    #option 3 -points
+    p "Your coat isn't on."
+    "There's a moment of silence as your attempted jokes completely flops."
+    show razi shocked
+    r "Have you ever heard of fashion, you insolent swine?!"
+    show razi neutral 
+    r "Uhg."
+    "Razi clears their throat and readjusts their coat. Though you can’t see their face, you can feel the dirty look shot your way."
 
-#end question 1
+    #end question 1
 
-r  "Well, now that I know you can make at least decent banter with someone befitting of my status, I suppose I shall indulge you."
-r "My interest could wane quickly though, so keep the conversation interesting, yes?"
-p "Of course doctor."
-r "Wonderful. Now, with banter as such, I will talk and you will answer."
-r "How about the conversation be about my works in life, and undeath. As a doctor who went to Harvard as it had just started up - yes I was one of the first students to attend - I learned much of the human body."
-r "Naturally, I wondered how possible it would be to take a person apart and put them back together again. Maybe even put two people together! So, I did a little grave digging and acquired dead bodies and spliced them together."
-p "Did it work?"
-r "No, it did not. So, I took an arm, cut mine off, and replaced it with that of the cadaver. This could have easily killed me. To get it to work, I fed wires through the dead arm and into my bloody stump."
-r "The pain was immense, yes, but the results were astounding. It worked! I began to wonder how much of a person I could replace, and as such I decided to continue to experiment on myself."
-r "That is how I became the amazing specimen you see in front of you."
-"Razi gestures to themselves and tilts their head at you."
+    r  "Well, now that I know you can make at least decent banter with someone befitting of my status, I suppose I shall indulge you."
+    r "My interest could wane quickly though, so keep the conversation interesting, yes?"
+    p "Of course doctor."
+    r "Wonderful. Now, with banter as such, I will talk and you will answer."
+    r "How about the conversation be about my works in life, and undeath. As a doctor who went to Harvard as it had just started up - yes I was one of the first students to attend - I learned much of the human body."
+    r "Naturally, I wondered how possible it would be to take a person apart and put them back together again. Maybe even put two people together! So, I did a little grave digging and acquired dead bodies and spliced them together."
+    p "Did it work?"
+    r "No, it did not. So, I took an arm, cut mine off, and replaced it with that of the cadaver. This could have easily killed me. To get it to work, I fed wires through the dead arm and into my bloody stump."
+    r "The pain was immense, yes, but the results were astounding. It worked! I began to wonder how much of a person I could replace, and as such I decided to continue to experiment on myself."
+    r "That is how I became the amazing specimen you see in front of you."
+    "Razi gestures to themselves and tilts their head at you."
 
- 
-#question 2
-r "What do you think of that, hmm?"
-
-
-#option 1 
-p "That's… interesting."
-show razi happy
-r "Indeed it is! I could talk about it for hours."
-p "Did you ever think of the ethics of doing such things?"
-r "Who needs ethics when anyone who threatens to report you to authorities can simply be turned into another body to harvest from?"
-
-#option 2 +points
-p "Do you ever wonder if you are still the same person?"
-show razi happy
-r "Ahhh, the Ship of Theseus Theory! Yes, would a ship - or person in this case - still be the same ship if every piece of it was replaced over a period of time?"
-r "I, however, do not apply to that theory, as I still have the spleen that I was brought into the world with as a babe."
-p "Why your spleen?" 
-"Razi shrugs."
-r "I have a nice spleen."
-p "What about your brain?"
-r "Consciousness is an entirely other conversation that I can have with you another time. It is a lengthy one."
-
-#option 3 -points
-p "Are you a masochist or something?"
-show razi sad
-r "Well, yes, but I don’t see how that would pertain to the conversation."
-p "It’s just that only a masochist would do something like that to themselves."
-r "That is quite the assumption of scientists like me. Many medical knowhows have come to be through the process of self experimentation."
-r "My journey through this change of body was not pushed by some desire for pain like many think, but by an appetite for knowledge."
-
-#end question 2
-
-show razi neutral 
-r "Though much of myself has been changed over the years, I have been searching for a new subject to experiment on."
-r "I have only recently started to look into exchanging body parts with that of animals, and with such questioning comes the bigger thought of if I can turn a human into a monster through similar means."
-"That was a very pointed question now wasn’t it."
-p " Yeah, I’m sure you’ll be able to find a person for that."
-r "Indeed I shall. I’m sure I will find one very, very soon."
-"Oh, you’re definitely in danger."
-r "Tell me, do you have any medical conditions?"
-p "I’m not too sure."
-r "Hmm. Do you know your blood type?"
-p "No?"
-r "Shame. Dear friend of mine, you whateveryournameis. I could care less, perhaps if we continue to talk after this party has come to an end I may learn it."
-r "I’m sure Ambrosia had a reason to invite a human such as yourself, and I presume you are to be a delicious treat for us, which through our conversation I believe you would be quite palatable."
-p "Wait, eat me? What do you m-"
-"Razi leans forwards and grabs a piece of cheese, shoving it in your mouth to shut you up."
-r "You’re in a castle full of monsters. A vampire is hosting a party in her home. If you are as smart as you think of yourself, I am sure you would have put it together by now."
-r "Though, I do believe that if I asked and played nice with Ambrosia, I could worm my way into her good graces and figure out a way to keep you alive. But, you must agree to something for me first."
-"You swallow the cheese that was not so gracefully used to shut you up."
-p "What would that be?" 
+    
+    #question 2
+    r "What do you think of that, hmm?"
 
 
-#question 3
-r "Be my next little experiment. What do you say?"
+    #option 1 
+    p "That's… interesting."
+    show razi happy
+    r "Indeed it is! I could talk about it for hours."
+    p "Did you ever think of the ethics of doing such things?"
+    r "Who needs ethics when anyone who threatens to report you to authorities can simply be turned into another body to harvest from?"
 
-#option 1 +points
-p "As long as you use something to dull the pain."
-show razi happy
-r "HAH! I could survive painful jokes like that if it meant feeding my curiosities."
-r "Could I turn a human into a monster through just one body part, or would it take as long as it did for me to turn. Questions to be asked by brilliant minds such as mine and yours."
-p "I get to live that way as well."
-r "I suppose you do."
+    #option 2 +points
+    p "Do you ever wonder if you are still the same person?"
+    show razi happy
+    r "Ahhh, the Ship of Theseus Theory! Yes, would a ship - or person in this case - still be the same ship if every piece of it was replaced over a period of time?"
+    r "I, however, do not apply to that theory, as I still have the spleen that I was brought into the world with as a babe."
+    p "Why your spleen?" 
+    "Razi shrugs."
+    r "I have a nice spleen."
+    p "What about your brain?"
+    r "Consciousness is an entirely other conversation that I can have with you another time. It is a lengthy one."
 
-#option 2
-p "If it keeps me alive."
-r "Hmm, not much enthusiasm, but I do appreciate the acceptance of your fate should you survive."
-r "Perhaps I will cut you open and replace your heart first so I can give you a love for science that I carry in mine."
+    #option 3 -points
+    p "Are you a masochist or something?"
+    show razi sad
+    r "Well, yes, but I don’t see how that would pertain to the conversation."
+    p "It’s just that only a masochist would do something like that to themselves."
+    r "That is quite the assumption of scientists like me. Many medical knowhows have come to be through the process of self experimentation."
+    r "My journey through this change of body was not pushed by some desire for pain like many think, but by an appetite for knowledge."
 
-#option 3 -points
-p "No! I don’t want to be cut apart."
-show razi shocked
-r "How boorish. I was having a good conversation, not many stay to listen to my long winded ramblings, so it is quite disappointing to see that you would rather die than indulge me."
-r "Still, when you are dead I can take whatever is left of you and see if I can make a monster human again."
-show razi neutral 
-r "Good luck living."
+    #end question 2
 
-#end question 3
+    show razi neutral 
+    r "Though much of myself has been changed over the years, I have been searching for a new subject to experiment on."
+    r "I have only recently started to look into exchanging body parts with that of animals, and with such questioning comes the bigger thought of if I can turn a human into a monster through similar means."
+    "That was a very pointed question now wasn’t it."
+    p " Yeah, I’m sure you’ll be able to find a person for that."
+    r "Indeed I shall. I’m sure I will find one very, very soon."
+    "Oh, you’re definitely in danger."
+    r "Tell me, do you have any medical conditions?"
+    p "I’m not too sure."
+    r "Hmm. Do you know your blood type?"
+    p "No?"
+    r "Shame. Dear friend of mine, you whateveryournameis. I could care less, perhaps if we continue to talk after this party has come to an end I may learn it."
+    r "I’m sure Ambrosia had a reason to invite a human such as yourself, and I presume you are to be a delicious treat for us, which through our conversation I believe you would be quite palatable."
+    p "Wait, eat me? What do you m-"
+    "Razi leans forwards and grabs a piece of cheese, shoving it in your mouth to shut you up."
+    r "You’re in a castle full of monsters. A vampire is hosting a party in her home. If you are as smart as you think of yourself, I am sure you would have put it together by now."
+    r "Though, I do believe that if I asked and played nice with Ambrosia, I could worm my way into her good graces and figure out a way to keep you alive. But, you must agree to something for me first."
+    "You swallow the cheese that was not so gracefully used to shut you up."
+    p "What would that be?" 
 
-show razi neutral
-"Razi moves back and fixes their collar."
-r "Well, I do suppose that I should converse with our gracious host promptly. Pleasantries must be shown for being a guest of honour."
-r "I had such a fun conversation with you, and I do hope you live. Good conversation is hard when you’re surrounded by dimwits with not a single thought behind their eyes."
-p "Yeah, I had a good conversation as well. Even if we had a bad conversation, at least the cheese tasted good."
-r "Hmm, yes, I suppose it did."
-"Razi gives you a curt nod."
-show razi happy
-r "I shall see you at the end of the night, alive or dead."
-"With a grand turn, coat flowing out behind them, they head off into the crowd of monsters on the ballroom floor."
+
+    #question 3
+    r "Be my next little experiment. What do you say?"
+
+    #option 1 +points
+    p "As long as you use something to dull the pain."
+    show razi happy
+    r "HAH! I could survive painful jokes like that if it meant feeding my curiosities."
+    r "Could I turn a human into a monster through just one body part, or would it take as long as it did for me to turn. Questions to be asked by brilliant minds such as mine and yours."
+    p "I get to live that way as well."
+    r "I suppose you do."
+
+    #option 2
+    p "If it keeps me alive."
+    r "Hmm, not much enthusiasm, but I do appreciate the acceptance of your fate should you survive."
+    r "Perhaps I will cut you open and replace your heart first so I can give you a love for science that I carry in mine."
+
+    #option 3 -points
+    p "No! I don’t want to be cut apart."
+    show razi shocked
+    r "How boorish. I was having a good conversation, not many stay to listen to my long winded ramblings, so it is quite disappointing to see that you would rather die than indulge me."
+    r "Still, when you are dead I can take whatever is left of you and see if I can make a monster human again."
+    show razi neutral 
+    r "Good luck living."
+
+    #end question 3
+
+    show razi neutral
+    "Razi moves back and fixes their collar."
+    r "Well, I do suppose that I should converse with our gracious host promptly. Pleasantries must be shown for being a guest of honour."
+    r "I had such a fun conversation with you, and I do hope you live. Good conversation is hard when you’re surrounded by dimwits with not a single thought behind their eyes."
+    p "Yeah, I had a good conversation as well. Even if we had a bad conversation, at least the cheese tasted good."
+    r "Hmm, yes, I suppose it did."
+    "Razi gives you a curt nod."
+    show razi happy
+    r "I shall see you at the end of the night, alive or dead."
+    "With a grand turn, coat flowing out behind them, they head off into the crowd of monsters on the ballroom floor."
 
     jump return_to_choice
 

@@ -301,7 +301,7 @@ label introduction:
     with moveouttop
 
     a """
-    Very good Doctor. I’m sure your request will be honoured.
+    Very good Doctor. I'm sure your request will be honoured.
 
     Finally, we have my latest little pet project, Basalt von Slate. She was born from this very castle
     as part of the architecture. 
@@ -658,7 +658,7 @@ label razi_date:
     r "Have you ever heard of fashion, you insolent swine?!"
     show razi neutral 
     r "Uhg."
-    "Razi clears their throat and readjusts their coat. Though you can’t see their face, you can feel the dirty look shot your way."
+    "Razi clears their throat and readjusts their coat. Though you can't see their face, you can feel the dirty look shot your way."
 
     #end question 1
 
@@ -700,8 +700,8 @@ label razi_date:
     #option 3 -points
     p "Are you a masochist or something?"
     show razi sad
-    r "Well, yes, but I don’t see how that would pertain to the conversation."
-    p "It’s just that only a masochist would do something like that to themselves."
+    r "Well, yes, but I don't see how that would pertain to the conversation."
+    p "It's just that only a masochist would do something like that to themselves."
     r "That is quite the assumption of scientists like me. Many medical knowhows have come to be through the process of self experimentation."
     r "My journey through this change of body was not pushed by some desire for pain like many think, but by an appetite for knowledge."
 
@@ -710,19 +710,19 @@ label razi_date:
     show razi neutral 
     r "Though much of myself has been changed over the years, I have been searching for a new subject to experiment on."
     r "I have only recently started to look into exchanging body parts with that of animals, and with such questioning comes the bigger thought of if I can turn a human into a monster through similar means."
-    "That was a very pointed question now wasn’t it."
-    p " Yeah, I’m sure you’ll be able to find a person for that."
-    r "Indeed I shall. I’m sure I will find one very, very soon."
-    "Oh, you’re definitely in danger."
+    "That was a very pointed question now was'nt it."
+    p " Yeah, I'm sure you'll be able to find a person for that."
+    r "Indeed I shall. I'm sure I will find one very, very soon."
+    "Oh, you're definitely in danger."
     r "Tell me, do you have any medical conditions?"
-    p "I’m not too sure."
+    p "I'm not too sure."
     r "Hmm. Do you know your blood type?"
     p "No?"
     r "Shame. Dear friend of mine, you whateveryournameis. I could care less, perhaps if we continue to talk after this party has come to an end I may learn it."
-    r "I’m sure Ambrosia had a reason to invite a human such as yourself, and I presume you are to be a delicious treat for us, which through our conversation I believe you would be quite palatable."
+    r "I'm sure Ambrosia had a reason to invite a human such as yourself, and I presume you are to be a delicious treat for us, which through our conversation I believe you would be quite palatable."
     p "Wait, eat me? What do you m-"
     "Razi leans forwards and grabs a piece of cheese, shoving it in your mouth to shut you up."
-    r "You’re in a castle full of monsters. A vampire is hosting a party in her home. If you are as smart as you think of yourself, I am sure you would have put it together by now."
+    r "You're in a castle full of monsters. A vampire is hosting a party in her home. If you are as smart as you think of yourself, I am sure you would have put it together by now."
     r "Though, I do believe that if I asked and played nice with Ambrosia, I could worm my way into her good graces and figure out a way to keep you alive. But, you must agree to something for me first."
     "You swallow the cheese that was not so gracefully used to shut you up."
     p "What would that be?" 
@@ -745,7 +745,7 @@ label razi_date:
     r "Perhaps I will cut you open and replace your heart first so I can give you a love for science that I carry in mine."
 
     #option 3 -points
-    p "No! I don’t want to be cut apart."
+    p "No! I don't want to be cut apart."
     show razi shocked
     r "How boorish. I was having a good conversation, not many stay to listen to my long winded ramblings, so it is quite disappointing to see that you would rather die than indulge me."
     r "Still, when you are dead I can take whatever is left of you and see if I can make a monster human again."
@@ -757,7 +757,7 @@ label razi_date:
     show razi neutral
     "Razi moves back and fixes their collar."
     r "Well, I do suppose that I should converse with our gracious host promptly. Pleasantries must be shown for being a guest of honour."
-    r "I had such a fun conversation with you, and I do hope you live. Good conversation is hard when you’re surrounded by dimwits with not a single thought behind their eyes."
+    r "I had such a fun conversation with you, and I do hope you live. Good conversation is hard when you're surrounded by dimwits with not a single thought behind their eyes."
     p "Yeah, I had a good conversation as well. Even if we had a bad conversation, at least the cheese tasted good."
     r "Hmm, yes, I suppose it did."
     "Razi gives you a curt nod."

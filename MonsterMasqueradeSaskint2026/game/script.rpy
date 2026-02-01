@@ -299,6 +299,7 @@ label introduction:
 
     hide razi
     with moveouttop
+    "Razi vaults into the air."
 
     a """
     Very good Doctor. I'm sure your request will be honoured.
@@ -810,7 +811,7 @@ label maximus_date:
     p "Wait, you can smell . . . {p} oh. You're a werewolf, aren't you?"
 
     show maximus neutral
-    pause(0.125)
+    
     show maximus happy
     m "Correctement!"
 
@@ -889,7 +890,7 @@ label maximus_date:
             m "...oh, you're asking if I'm going to eat you."
             m "No, I'm not going to eat you. It's not a full moon."
 
-            show max neutral
+            show maximus neutral
             m "It's actually a new moon, in fact. Ambrosia's practical about these things. It's the safest time for everyone to come, and it's thematic in its own way, no?"
 
         "Well, that's one heck of a story!":
@@ -938,7 +939,7 @@ label maximus_date:
             $ character_points["Maximus"] -= 5
         "Iteresting guy. Interestig talk.":
             pass
-        "And yet, stil... Maximus... I hope he's okay...":
+        "And yet, still... Maximus... I hope he's okay...":
             $ character_points["Maximus"] += 5
 
     jump return_to_choice

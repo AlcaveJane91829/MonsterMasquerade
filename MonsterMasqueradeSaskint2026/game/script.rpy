@@ -5,28 +5,47 @@ default protag_name = "Gray"
 
 # Characters used in the game
 define p = Character("[protag_name]", color = "#ffffff", image = "protag") # Self-insert
-define a = Character("Ambrosia", color = "#e33e5d", image = "ambrosia") # Female vampire
-define b = Character("Basalt", color = "#3ea1e3", image = "basalt") # Female Gargoyle
-define nvb = Character("", color = "#ffffff", kind = nvl) # Novel-mode for Basalt's poetry
-define r = Character("Razi", color = "#00d470", image = "razi") # Non-Binary Creature thing
-define m = Character("Maximus", color = "#ffde25", image = "maximus") # Male werewolf
-define q = Character("???", color = "#ffffff") # Character labelled with question marks to mask their identity
+define a = Character("Ambrosia", color = "#b91d1d", image = "ambrosia") # Female vampire
+define b = Character("Basalt", color = "#274699", image = "basalt") # Female Gargoyle
+define nvb = Character("", kind = nvl) # Novel-mode for Basalt's poetry
+define r = Character("Razi", color = "#036849", image = "razi") # Non-Binary Creature thing
+define m = Character("Maximus", color = "#cbe296", image = "maximus") # Male werewolf
+define q = Character("???", color = "#d18e8e") # Character labelled with question marks to mask their identity
 
-# Backgrounds and CGs
 image bg note = "note.png"
 image bg blank = "#000000"
-image bg ballroon = "Ballroom_Front_Final.png"
+image bg ballroom = "Ballroom_Front_Final.png"
+image bg castle = "Castle.png"
 
-image cg ambrosia = 
-image cg basalt = 
-image cg maximus =
-image cg razi = 
+image cg ambrosia = "AmbrosiaEnding_Final.png"
+image cg basalt = "BasaltEnding_Final.png"
+image cg maximus = "MaximusEnding_Final.png"
+image cg razi = "RaziEnding_Final.png"
 
 # Character portraits
-image ambrosia = "AmbrosiaPH.png"
-image basalt = "BasaltPH.png"
-image maximus = "MaximusPH.png"
-image razi = "RaziPH.png"
+image ambrosia = "ambrosia_neutral.png"
+image ambrosia neutral = "ambrosia_neutral.png"
+image ambrosia happy = "ambrosia_happy.png"
+image ambrosia sad = "ambrosia_sad.png"
+image ambrosia shocked = "ambrosia_shocked.png"
+
+image basalt = "basalt_neutral.png"
+image basalt neutral = "basalt_neutral.png"
+image basalt happy = "basalt_happy.png"
+image basalt sad = "basalt_sad.png"
+image basalt shocked = "basalt_shocked.png"
+
+image maximus = "max_neutral.png"
+image maximus neutral = "max_neutral.png"
+image maximus happy = "max_happy.png"
+image maximus sad = "max_sad.png"
+image maximus shocked = "max_shocked.png"
+
+image razi = "razi_neutral.png"
+image razi neutral = "razi_neutral.png"
+image razi happy = "razi_happy.png"
+image razi sad = "razi_sad.png"
+image razi shocked = "razi_shocked.png"
 
 # If all characters are at max points (all at some number), poly ending?
 # If all characters have negative point values, go_home?

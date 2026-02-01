@@ -1128,9 +1128,48 @@ label basalt_ending:
     jump credits
 
 label razi_ending:
-    ##### PLACEHOLDER
-    show razi
-    "You got Razi's ending! Play again to try to see more!"
+    "Well, you suppose, it's about time to head out."
+    "It was certainly interesting to meet these people, but the vibes, they're still freaking you out."
+    "Besides, you don't want to stay out in the new moon too late, do you?"
+
+    show razi happy
+
+    "Just as you're grabbing the last snack from the dessert table, you notice Razi making a beeline towards you."
+    r "My fine fellow, it seems as though I have convinced our lovely hostess to not eat you!"
+    r "It's a good night for a bit of life saving isn't it."
+    p "Yes. Thank you so much Razi, I was not keen on being eaten. I will take my leave now then."
+    "Just as you turn to leave this cursed place, Razi places a surprisingly warm hand on your shoulder, a small jolt of electricity snapping like static."
+    show razi normal
+    r "Come now, we made an agreement if I remember correctly, and naturally I do. I save your life, you stay with me. Compatriots in science!"
+    p "Right. Slipped my mind."
+    "It hadn't, but you were hoping it had slipped from theirs. Still, following through with your deal wouldn't be too bad. Razi was an interesting character, so you would never be bored."
+    "Their hand leaves your shoulder and they lean up against the dessert table, tiling their head."
+    r "I'm sure it did, hmm? My mind however, is a steel trap wired shut, nothing escapes it."
+    p "Having it wired shut would mean nothing get in it though."
+    "Razi shakes a finger at you, chuckling."
+    r "An astute observation, however as a scientist of my caliber I was able to find a way to get information into said steel trap."
+    r "Now, as my new partner in science, I believe that we should finish up this party."
+    p "Yeah, definitely. It's starting to get a bit stuffy in here."
+    "Razi stands up from their leaning position and takes your hand. Shifting their mask, they lean down and place a kiss on the back of your hand, a jolt of electricity shooting up your arm and warming your heart."
+    r "Might I have this last dance?"
+    p "O-Oh! Of course."
+    "Razi moves their mask back over their face and stands up, linking their arm with you."
+    r "To the dance floor then, and what better way to dance then with the start of an experimentation!"
+
+    scene cg razi
+
+    "Pulling out a needle and thread, Razi starts to spin with you in a waltz."
+    r "First experiment, how high is your pain threshold. Hold onto me as tight as you want, dearest."
+    r "Perhaps we will have the same appreciation for pain. Great minds do think alike."
+    """
+    Pain shoots through your arm as the two of you spin around, the needle and threat pulling through your skin. 
+    The initials RF written into your skin in black twine.
+    The manic laughter from Razi is worrisome, but here in the ballroom, spinning with the strange doctor,
+    """
+    """
+    You could stay with them, every day a new experience.
+    What's a little bit of pain a day for the promise of immortality with them by your side.
+    """
     jump credits
 
 label maximus_ending:
@@ -1245,7 +1284,6 @@ label poly_ending:
     jump credits
 
 label go_home:
-    ##### YOU DIE!!!!!! (again, serious suggestion?) -----Damarcelle
     "As the conversations come to a close, the ambiance of the room begins to shift."
     "The Countess taps her glass with a spoon, letting a sound ring out across the ballroom."
     show ambrosia neutral

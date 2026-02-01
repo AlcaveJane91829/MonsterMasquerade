@@ -626,6 +626,8 @@ label basalt_date:
 label razi_date:
     scene bg ballroom
     "You walk over to the doctor with the strange mask. They are shoveling pieces of charcuterie into their pockets."
+    show razi
+    with with moveinbottom
     r "Well well well, another plebeian approaches. I hope this one will be different"
     p "Greetings, I am-"
     r "I do not care for names. I care about what is in here,"
@@ -636,31 +638,29 @@ label razi_date:
     r "That's all? You must have nothing in your head just like the rest of these nitwit bone biters who surround us."
     r "I find it quite insulting that you would sully the air around me with such dimwitter banter."
     p "I am fully capable of good banter."
-    #question 1
-    r "So, then banter! Tell me something interesting."
+    menu:
+        r "So, then banter! Tell me something interesting."
 
-    #option 1 +points
-    p "Did you know that there are 2000 varieties of cheeses available worldwide."
-    r "2000?"
-    show razi happy
-    r "I do not often keep up with the food world, but considering we are at the refreshment table, I suppose such conversation is inevitable."
-    show razi neutral 
-    r "But in the long run I would prefer conversation to not be solely about food. I am a scientist, not a cheese monger after all."
+        "Did you know that there are 2000 varieties of cheeses available worldwide.":
+            $ character_points["Razi"] += 5
+            r "2000?"
+            show razi happy
+            r "I do not often keep up with the food world, but considering we are at the refreshment table, I suppose such conversation is inevitable."
+            show razi neutral 
+            r "But in the long run I would prefer conversation to not be solely about food. I am a scientist, not a cheese monger after all."
 
-    #option 2
-    p"I'm a human."
-    r "That much is obvious just looking at you. No self respecting member of monster society would come to one of Ambrosia's grand masquerades with their jaw as slack as yours was."
-    r "Well, maybe a zombie would, but our lovely hostess hates the stink that comes off of them."
+        "I'm a human.":
+            r "That much is obvious just looking at you. No self respecting member of monster society would come to one of Ambrosia's grand masquerades with their jaw as slack as yours was."
+            r "Well, maybe a zombie would, but our lovely hostess hates the stink that comes off of them."
 
-    #option 3 -points
-    p "Your coat isn't on."
-    "There's a moment of silence as your attempted jokes completely flops."
-    show razi shocked
-    r "Have you ever heard of fashion, you insolent swine?!"
-    show razi neutral 
-    r "Uhg."
-    "Razi clears their throat and readjusts their coat. Though you can't see their face, you can feel the dirty look shot your way."
-
+        "Your coat isn't on.":
+            $ character_points["Razi"] -= 5
+            "There's a moment of silence as your attempted jokes completely flops."
+            show razi shocked
+            r "Have you ever heard of fashion, you insolent swine?!"
+            show razi neutral 
+            r "Uhg."
+            "Razi clears their throat and readjusts their coat. Though you can't see their face, you can feel the dirty look shot your way."
     #end question 1
 
     r  "Well, now that I know you can make at least decent banter with someone befitting of my status, I suppose I shall indulge you."
@@ -679,32 +679,31 @@ label razi_date:
     #question 2
     r "What do you think of that, hmm?"
 
+    menu:
+        "That's... interesting.":
+            show razi happy
+            r "Indeed it is! I could talk about it for hours."
+            p "Did you ever think of the ethics of doing such things?"
+            r "Who needs ethics when anyone who threatens to report you to authorities can simply be turned into another body to harvest from?"
 
-    #option 1 
-    p "That's… interesting."
-    show razi happy
-    r "Indeed it is! I could talk about it for hours."
-    p "Did you ever think of the ethics of doing such things?"
-    r "Who needs ethics when anyone who threatens to report you to authorities can simply be turned into another body to harvest from?"
+        "Do you ever wonder if you are still the same person?":
+            $ character_points["Razi"] += 5
+            show razi happy
+            r "Ahhh, the Ship of Theseus Theory! Yes, would a ship - or person in this case - still be the same ship if every piece of it was replaced over a period of time?"
+            r "I, however, do not apply to that theory, as I still have the spleen that I was brought into the world with as a babe."
+            p "Why your spleen?" 
+            "Razi shrugs."
+            r "I have a nice spleen."
+            p "What about your brain?"
+            r "Consciousness is an entirely other conversation that I can have with you another time. It is a lengthy one."
 
-    #option 2 +points
-    p "Do you ever wonder if you are still the same person?"
-    show razi happy
-    r "Ahhh, the Ship of Theseus Theory! Yes, would a ship - or person in this case - still be the same ship if every piece of it was replaced over a period of time?"
-    r "I, however, do not apply to that theory, as I still have the spleen that I was brought into the world with as a babe."
-    p "Why your spleen?" 
-    "Razi shrugs."
-    r "I have a nice spleen."
-    p "What about your brain?"
-    r "Consciousness is an entirely other conversation that I can have with you another time. It is a lengthy one."
-
-    #option 3 -points
-    p "Are you a masochist or something?"
-    show razi sad
-    r "Well, yes, but I don't see how that would pertain to the conversation."
-    p "It's just that only a masochist would do something like that to themselves."
-    r "That is quite the assumption of scientists like me. Many medical knowhows have come to be through the process of self experimentation."
-    r "My journey through this change of body was not pushed by some desire for pain like many think, but by an appetite for knowledge."
+        "Are you a masochist or something?":
+            $ character_points["Razi"] -= 5
+            show razi sad
+            r "Well, yes, but I don't see how that would pertain to the conversation."
+            p "It's just that only a masochist would do something like that to themselves."
+            r "That is quite the assumption of scientists like me. Many medical knowhows have come to be through the process of self experimentation."
+            r "My journey through this change of body was not pushed by some desire for pain like many think, but by an appetite for knowledge."
 
     #end question 2
 
@@ -732,26 +731,29 @@ label razi_date:
     #question 3
     r "Be my next little experiment. What do you say?"
 
+    menu:
     #option 1 +points
-    p "As long as you use something to dull the pain."
-    show razi happy
-    r "HAH! I could survive painful jokes like that if it meant feeding my curiosities."
-    r "Could I turn a human into a monster through just one body part, or would it take as long as it did for me to turn. Questions to be asked by brilliant minds such as mine and yours."
-    p "I get to live that way as well."
-    r "I suppose you do."
+        "As long as you use something to dull the pain.":
+            $ character_points["Razi"] += 5
+            show razi happy
+            r "HAH! I could survive painful jokes like that if it meant feeding my curiosities."
+            r "Could I turn a human into a monster through just one body part, or would it take as long as it did for me to turn. Questions to be asked by brilliant minds such as mine and yours."
+            p "I get to live that way as well."
+            r "I suppose you do."
 
-    #option 2
-    p "If it keeps me alive."
-    r "Hmm, not much enthusiasm, but I do appreciate the acceptance of your fate should you survive."
-    r "Perhaps I will cut you open and replace your heart first so I can give you a love for science that I carry in mine."
+        #option 2
+        "If it keeps me alive.":
+            r "Hmm, not much enthusiasm, but I do appreciate the acceptance of your fate should you survive."
+            r "Perhaps I will cut you open and replace your heart first so I can give you a love for science that I carry in mine."
 
-    #option 3 -points
-    p "No! I don't want to be cut apart."
-    show razi shocked
-    r "How boorish. I was having a good conversation, not many stay to listen to my long winded ramblings, so it is quite disappointing to see that you would rather die than indulge me."
-    r "Still, when you are dead I can take whatever is left of you and see if I can make a monster human again."
-    show razi neutral 
-    r "Good luck living."
+        #option 3 -points
+        "No! I don't want to be cut apart.":
+            $ character_points["Razi"] -= 5
+            show razi shocked
+            r "How boorish. I was having a good conversation, not many stay to listen to my long winded ramblings, so it is quite disappointing to see that you would rather die than indulge me."
+            r "Still, when you are dead I can take whatever is left of you and see if I can make a monster human again."
+            show razi neutral 
+            r "Good luck living."
 
     #end question 3
 
@@ -848,9 +850,9 @@ label maximus_date:
     ...well, he wanted to eat, and I guess to him I was as good as a ham sandwich. 
     """
     
-    mslow "It was a bloody thing, really.{nw}"
+    m "{cps=0.25}It was a bloody thing, really.{nw}"
     show maximus sad
-    extend "Through all the pain, my biggest fear was that my children would be forced to see me like that."
+    extend "Through all the pain, my biggest fear was that my children would be forced to see me like that.{/cps}"
 
     show maximus neutral
     m """
@@ -863,7 +865,7 @@ label maximus_date:
     The tail . . . it was hard to explain to people that it was actually real, that it wasn't some strange fancy to wear a costume the whole day.
     """
 
-    mslow "But Mathilda . . ."
+    m "{cps=0.25}But Mathilda . . .{/cps}"
 
     m """
     She wasn't cruel about it. She was strictly practical. She wanted the kids to be safe. So did I. We divorced and we agreed I'd leave.
@@ -875,7 +877,7 @@ label maximus_date:
     You'd think it'd be a cushy job, and Ambrosia does keep the pay and hours good, but I still have lots of time to read.
     """
 
-    mslow "Lots of time to think..."
+    m "{cps=0.25}Lots of time to think...{/cps}"
 
     menu:
         "Are you going to make {i}me{/i} a ham sandwich!?":
@@ -896,7 +898,7 @@ label maximus_date:
 
         "Maximus...":
             $ character_points["Maximus"] += 5
-            mslow ". . . "
+            m "{cps=0.25}. . . {/cps}"
 
     show maximus happy
     m "Well then, enough about me! How are you enjoying the ball?"

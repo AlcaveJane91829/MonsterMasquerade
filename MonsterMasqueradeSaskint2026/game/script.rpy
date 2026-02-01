@@ -1212,9 +1212,31 @@ label maximus_ending:
     jump credits
 
 label ambrosia_ending:
-    ##### PLACEHOLDER
+    "Well, you suppose, it's about time to head out."
+    "It was certainly interesting to meet these people, but the vibes, they're still freaking you out."
+    "Besides, you don't want to stay out in the new moon too late, do you?"
+    show ambrosia
+    "After her speech, Ambrosia heads straight towards you."
+    show ambrosia happy
+    a "Well if it isn’t my favorite little human. Where do you think you are going? Don’t tell me you thought you could just get away."
+    p "Oh, I thought I should probably get going."
+    a "No no, not at all. Why not stay with me. Forever. I could protect you, keep you safe."
+    a "Of course your other option is to do what I originally wanted to. But that would be such a waste of a loyal servant."
+    p "What did you originally want?"
+    show ambrosia smile
+    a "Eat you, of course."
+    show ambrosia neutral
+    p "..."
+    a "But I don’t want that anymore, but the choice is yours of course."
+    p "Well I guess I shall stay with you then, my lady."
+    show ambrosia smile
+    a "Perfect."
+    a "Join me for a dance?"
     scene cg ambrosia
-    "You got Ambrosia's ending! Play again to try to see more!"
+    "The Countess sweeps you onto the dance floor leading your every move.
+    In her cold hand you feel stable and safe. You feel the worries of everyday life slough off of you as she sinks her teeth into your neck.
+    There is no need to resist for she will keep you safe and she will give you everything you desire. 
+    But the only thing that you desire now is her."
     jump credits
 
 label poly_ending:

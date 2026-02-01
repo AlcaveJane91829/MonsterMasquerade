@@ -21,6 +21,7 @@ image cg ambrosia = "AmbrosiaEnding_Final.png"
 image cg basalt = "BasaltEnding_Final.png"
 image cg maximus = "MaximusEnding_Final.png"
 image cg razi = "RaziEnding_Final.png"
+image cg bad = "BadEnd.png"
 
 # Character portraits
 image ambrosia = "ambrosia_neutral.png"
@@ -1212,7 +1213,7 @@ label maximus_ending:
 
 label ambrosia_ending:
     ##### PLACEHOLDER
-    show ambrosia
+    scene cg ambrosia
     "You got Ambrosia's ending! Play again to try to see more!"
     jump credits
 
@@ -1223,7 +1224,7 @@ label poly_ending:
 
 label go_home:
     ##### YOU DIE!!!!!! (again, serious suggestion?) -----Damarcelle
-    scene bg blank
+    scene cg bad
     "Wow, what a jerk! You were mean to EVERYBODY! They ate you!"
     "You got the bad ending! Play again to try to see more!"
     jump credits
